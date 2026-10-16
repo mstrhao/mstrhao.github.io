@@ -26,7 +26,7 @@
     const view = Object.prototype.hasOwnProperty.call(pageTitles, hash) ? hash : 'home';
     document.body.dataset.view = view;
     document.querySelectorAll('nav a').forEach(link => {
-      const active = link.getAttribute('href') === (view === 'home' ? '#' : '#' + view);
+      const active = link.getAttribute('href') === (view === 'home' ? '/' : '#' + view);
       if (active) link.setAttribute('aria-current', 'page'); else link.removeAttribute('aria-current');
     });
     render(language);
@@ -37,6 +37,13 @@
     render(language === 'en' ? 'zh' : 'en');
     try { localStorage.setItem('hao-zhou-language', language); } catch (_) {}
   });
+  document.querySelectorAll('a[href="/"]').forEach(link => link.addEventListener('click', event => {
+    if (event.button !== 0 || event.metaKey || event.ctrlKey || event.shiftKey || event.altKey) return;
+    event.preventDefault();
+    history.pushState({}, '', '/');
+    route();
+  }));
+  window.addEventListener('popstate', route);
   window.addEventListener('hashchange', route);
   route();
 })();

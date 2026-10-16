@@ -60,7 +60,9 @@
     "navBlog": "Blog",
     "blogTitle": "Blog",
     "blogEmpty": "Articles will appear here as they are published.",
-    "navHome": "Home"
+    "navHome": "Home",
+    "officeLabel": "Office address",
+    "officeAddress": "320 Yueyang Road, Shanghai, China"
   },
   "zh": {
     "pageTitle": "周浩 | 意识与工作记忆",
@@ -121,7 +123,9 @@
     "navBlog": "随笔",
     "blogTitle": "思考与随笔",
     "blogEmpty": "这里将陆续发布研究思考与方法笔记。",
-    "navHome": "首页"
+    "navHome": "首页",
+    "officeLabel": "办公地址",
+    "officeAddress": "上海市岳阳路320号"
   },
   "publications": [
     {
