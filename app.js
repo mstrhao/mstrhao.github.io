@@ -40,6 +40,23 @@
   }
 
   try { const saved = localStorage.getItem('hao-zhou-language'); if (saved === 'en' || saved === 'zh') language = saved; else if (navigator.language.toLowerCase().startsWith('zh')) language = 'zh'; } catch (_) {}
+  function filterBlog() {
+    const input = document.getElementById('blog-search');
+    input.placeholder = content[language].blogSearchHint;
+    const query = input.value.trim().toLocaleLowerCase();
+    let matches = 0;
+    document.querySelectorAll('#blog-results .blog-post').forEach((el,index) => {
+      const post = content.blogPosts[index];
+      const text = [post.title.en,post.title.zh,...post.body_en,...post.body_zh].join(' ').toLocaleLowerCase();
+      el.hidden = !!query && !text.includes(query);
+      if (!el.hidden) matches++;
+    });
+    document.getElementById('blog-search-empty').hidden = !query || matches > 0;
+  }
+  document.getElementById('blog-search').addEventListener('input',filterBlog);
+  document.getElementById('blog-search-clear').addEventListener('click',()=>{
+    const input = document.getElementById('blog-search'); input.value=''; filterBlog(); input.focus();
+  });
   function currentBlog() { return (content.blogPosts || []).find(post => location.hash === '#blog/' + post.slug); }
   function render(lang) {
     language = lang;
@@ -60,6 +77,7 @@
     button.hidden = false;
     renderEvents();
     renderRecentEvents();
+    filterBlog();
   }
   function route() {
     const hash = location.hash.slice(1);
@@ -113,6 +131,7 @@
   }
   function eventDate(entry) {
     if (entry.start) return new Intl.DateTimeFormat(language === 'zh' ? 'zh-CN' : 'en-GB',{timeZone:eventZone,year:'numeric',month:'2-digit',day:'2-digit',hour:'2-digit',minute:'2-digit',hour12:false}).format(new Date(entry.start));
+    if (entry.endDate && entry.endDate !== entry.date) return eventDate({...entry,endDate:null}) + ' – ' + eventDate({...entry,date:entry.endDate,endDate:null});
     const [year,month,day] = entry.date.split('-');
     return language === 'zh' ? year+'年'+(month ? Number(month)+'月' : '')+(day ? Number(day)+'日' : '') : entry.date;
   }
@@ -131,7 +150,7 @@
   function renderRecentEvents() {
     const todayParts = new Intl.DateTimeFormat('en-CA',{timeZone:eventZone,year:'numeric',month:'2-digit',day:'2-digit'}).formatToParts(new Date());
     const today = ['year','month','day'].map(key=>todayParts.find(p=>p.type===key).value).join('-');
-    const entries = eventEntries.filter(entry=>entry.category==='public-event' && entry.date.length===10 && entry.date>=today).sort((a,b)=>a.date.localeCompare(b.date)||(a.start||'').localeCompare(b.start||'')).slice(0,3);
+    const entries = eventEntries.filter(entry=>entry.category==='public-event' && entry.date.length===10 && (entry.endDate||entry.date)>=today).sort((a,b)=>a.date.localeCompare(b.date)||(a.start||'').localeCompare(b.start||'')).slice(0,3);
     const target=document.getElementById('recent-events');target.replaceChildren();
     if(!entries.length) target.append(element('p',content[language].recentNone));
     entries.forEach(entry=>target.append(element('p',eventDate(entry)+' · '+entry.title[language])));
@@ -153,7 +172,7 @@
     const yearValid = Number.isInteger(requestedYear) && requestedYear >= 1 && requestedYear <= 9999;
     const selectedYear = yearValid ? requestedYear : currentYear;
     const query = eventSearch.value.trim().toLocaleLowerCase();
-    const filtered = eventEntries.filter(entry => (!eventCategory.value || entry.category === eventCategory.value) && (!eventYear.value || !yearValid || Number(entry.date.slice(0,4)) === requestedYear) && (!query || [entry.title.en,entry.title.zh,entry.description.en,entry.description.zh].some(s=>s.toLocaleLowerCase().includes(query)))).sort((a,b)=>a.date.localeCompare(b.date)||a.id.localeCompare(b.id));
+    const filtered = eventEntries.filter(entry => (!eventCategory.value || entry.category === eventCategory.value) && (!eventYear.value || !yearValid || Number(entry.date.slice(0,4)) <= requestedYear && Number((entry.endDate||entry.date).slice(0,4)) >= requestedYear) && (!query || [entry.title.en,entry.title.zh,entry.description.en,entry.description.zh].some(s=>s.toLocaleLowerCase().includes(query)))).sort((a,b)=>a.date.localeCompare(b.date)||a.id.localeCompare(b.id));
     const target=document.getElementById('events-results'); target.replaceChildren();
     if (eventView === 'list') {
       if (!filtered.length) target.append(element('p', eventEntries.length ? text.eventsNoMatch : text.eventsEmpty,'blog-empty'));
@@ -169,13 +188,15 @@
     (language === 'zh' ? ['一','二','三','四','五','六','日'] : ['Mon','Tue','Wed','Thu','Fri','Sat','Sun']).forEach(day=>{const cell=element('th',day);cell.scope='col';headings.append(cell);});
     head.append(headings);table.append(head);
     const body=element('tbody'); const offset=(first.getUTCDay()+6)%7;
-    const inMonth=filtered.filter(entry=>entry.date.length===10 && Number(entry.date.slice(0,4))===selectedYear && Number(entry.date.slice(5,7))===eventMonth);
+    const monthStart=String(selectedYear).padStart(4,'0')+'-'+String(eventMonth).padStart(2,'0')+'-01';
+    const monthEnd=monthStart.slice(0,8)+String(last.getUTCDate()).padStart(2,'0');
+    const inMonth=filtered.filter(entry=>entry.date.length===10 && entry.date<=monthEnd && (entry.endDate||entry.date)>=monthStart);
     for(let i=0;i<Math.ceil((offset+last.getUTCDate())/7)*7;i++) {
       if(i%7===0) body.append(element('tr'));
       const cell=element('td');const day=i-offset+1;
       if(day>=1 && day<=last.getUTCDate()) {
         cell.append(element('span',String(day),'calendar-day'));
-        inMonth.filter(entry=>Number(entry.date.slice(8,10))===day).forEach(entry=>{const link=element('a',entry.title[language]);link.href='#event-'+entry.id;link.addEventListener('click',event=>{event.preventDefault();document.getElementById('event-'+entry.id)?.scrollIntoView({block:'center'});});cell.append(link);});
+        inMonth.filter(entry=>{const date=monthStart.slice(0,8)+String(day).padStart(2,'0');return entry.date<=date && (entry.endDate||entry.date)>=date;}).forEach(entry=>{const link=element('a',entry.title[language]);link.href='#event-'+entry.id;link.addEventListener('click',event=>{event.preventDefault();document.getElementById('event-'+entry.id)?.scrollIntoView({block:'center'});});cell.append(link);});
       }
       body.lastElementChild.append(cell);
     }

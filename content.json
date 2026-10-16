@@ -92,7 +92,11 @@
     "backToBlog": "All posts",
     "readPost": "Read article",
     "recentEvents": "Upcoming events",
-    "recentNone": "None"
+    "recentNone": "None",
+    "blogSearch": "Search posts",
+    "blogSearchHint": "Search titles and article text",
+    "blogSearchEmpty": "No matching posts.",
+    "blogSearchClear": "Clear"
   },
   "zh": {
     "pageTitle": "周浩 | 意识与工作记忆",
@@ -185,7 +189,11 @@
     "backToBlog": "全部随笔",
     "readPost": "阅读全文",
     "recentEvents": "近期事件",
-    "recentNone": "无"
+    "recentNone": "无",
+    "blogSearch": "搜索随笔",
+    "blogSearchHint": "搜索标题与正文",
+    "blogSearchEmpty": "没有匹配的文章。",
+    "blogSearchClear": "清空"
   },
   "publications": [
     {
@@ -344,6 +352,21 @@
       }
     }
   ],
-  "events": [],
+  "events": [
+    {
+      "id": "zhang-xiangtong-meeting-2026",
+      "category": "public-event",
+      "date": "2026-10-24",
+      "endDate": "2026-10-26",
+      "title": {
+        "zh": "第二届张香桐会议",
+        "en": "第二届张香桐会议"
+      },
+      "description": {
+        "zh": "2026年10月24日至26日。",
+        "en": "24–26 October 2026."
+      }
+    }
+  ],
   "eventsTimeZone": "Asia/Shanghai"
 }

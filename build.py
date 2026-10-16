@@ -25,6 +25,9 @@ for event in data.get('events', []):
         for lang in ('en', 'zh'):
             if not isinstance(event[field][lang], str) or not event[field][lang].strip():
                 raise ValueError('Bilingual event text required')
+    if event.get('endDate'):
+        if len(value) != 10 or not re.fullmatch(r'[0-9]{4}-[0-9]{2}-[0-9]{2}',event['endDate']) or date.fromisoformat(event['endDate']) < date.fromisoformat(value):
+            raise ValueError('Multi-day events require a valid inclusive end date')
     if event.get('start'):
         moment = datetime.fromisoformat(event['start'])
         if moment.utcoffset() is None or len(value) != 10:
