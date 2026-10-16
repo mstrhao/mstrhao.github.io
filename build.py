@@ -3,6 +3,41 @@ import json, html, re
 from pathlib import Path
 root = Path(__file__).resolve().parent
 data = json.loads((root/'content.json').read_text())
+
+# Validate only deliberately curated entries; preserve incomplete historical dates.
+from datetime import date, datetime
+from urllib.parse import urlparse
+from zoneinfo import ZoneInfo
+ZoneInfo(data.get('eventsTimeZone', 'Asia/Shanghai'))
+seen_events = set()
+for event in data.get('events', []):
+    if not re.fullmatch(r'[a-z0-9]+(?:-[a-z0-9]+)*', event['id']) or event['id'] in seen_events:
+        raise ValueError('Invalid or duplicate public event id')
+    seen_events.add(event['id'])
+    if event['category'] not in ('public-event', 'science', 'history', 'milestone'):
+        raise ValueError('Invalid event category')
+    value = event['date']
+    if not re.fullmatch(r'[0-9]{4}(?:-[0-9]{2})?(?:-[0-9]{2})?', value):
+        raise ValueError('Use year, year-month, or full Gregorian date')
+    parts = [int(x) for x in value.split('-')]
+    date(*(parts + [1] * (3-len(parts))))
+    for field in ('title', 'description'):
+        for lang in ('en', 'zh'):
+            if not isinstance(event[field][lang], str) or not event[field][lang].strip():
+                raise ValueError('Bilingual event text required')
+    if event.get('start'):
+        moment = datetime.fromisoformat(event['start'])
+        if moment.utcoffset() is None or len(value) != 10:
+            raise ValueError('Timed events need an explicit offset and exact date')
+        zone = ZoneInfo(event['timeZone'])
+        if moment.astimezone(ZoneInfo(data['eventsTimeZone'])).date().isoformat() != value:
+            raise ValueError('Calendar date must match displayed timezone')
+    if event['category'] in ('science','history') and not event.get('sources'):
+        raise ValueError('Historical entries require a source')
+    for source in event.get('sources', []):
+        if urlparse(source['url']).scheme not in ('https','http') or not urlparse(source['url']).netloc:
+            raise ValueError('Source must be a public web URL')
+
 template = (root/'template.html').read_text()
 for key, value in data['en'].items():
     template = template.replace('{{'+key+'}}', html.escape(value))
