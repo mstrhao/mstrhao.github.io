@@ -1,0 +1,46 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+<title>{{pageTitle}}</title>
+<meta name="description" content="{{intro}}">
+<meta name="color-scheme" content="light">
+<link rel="stylesheet" href="styles.css">
+<script id="site-content" type="application/json">{{data}}</script>
+<script src="app.js" defer></script>
+</head>
+<body>
+<a class="skip" href="#main" data-i18n="skip">{{skip}}</a>
+<div class="page">
+<header>
+<a class="wordmark" href="#main" aria-label="Hao Zhou home">HZ<span class="dot">.</span></a>
+<nav aria-label="Main navigation"><a href="#research" data-i18n="navResearch">{{navResearch}}</a><a href="#publications" data-i18n="navPublications">{{navPublications}}</a><a href="#contact" data-i18n="navContact">{{navContact}}</a></nav>
+<button id="language" type="button" aria-label="{{switchLabel}}" hidden>{{switchText}}</button>
+</header>
+<main id="main">
+<section class="intro" aria-labelledby="name">
+<p class="eyebrow" data-i18n="eyebrow">{{eyebrow}}</p>
+<h1 id="name"><span data-i18n="name">{{name}}</span> <span class="other-name" data-i18n="otherName" lang="zh-CN">{{otherName}}</span></h1>
+<p class="affiliation"><span data-i18n="position">{{position}}</span><br><a href="https://english.cebsit.cas.cn/" data-i18n="affiliation">{{affiliation}}</a></p>
+<p class="statement" data-i18n="intro">{{intro}}</p>
+<a class="text-link" href="{{github}}">GitHub <span aria-hidden="true">↗</span></a>
+</section>
+<section class="section" id="research" aria-labelledby="research-title">
+<h2 id="research-title" data-i18n="researchTitle">{{researchTitle}}</h2>
+<div class="section-body"><p class="research-intro" data-i18n="researchIntro">{{researchIntro}}</p>
+<dl class="research-list">
+<div><dt data-i18n="area1">{{area1}}</dt><dd data-i18n="question1">{{question1}}</dd></div>
+<div><dt data-i18n="area2">{{area2}}</dt><dd data-i18n="question2">{{question2}}</dd></div>
+<div><dt data-i18n="area3">{{area3}}</dt><dd data-i18n="question3">{{question3}}</dd></div>
+</dl></div>
+</section>
+<section class="section" id="publications" aria-labelledby="publications-title">
+<h2 id="publications-title" data-i18n="publicationsTitle">{{publicationsTitle}}</h2>
+<div class="section-body">{{publications}}</div>
+</section>
+{{notes}}
+<section class="section contact" id="contact" aria-labelledby="contact-title"><h2 id="contact-title" data-i18n="contactTitle">{{contactTitle}}</h2><div class="section-body"><p class="email-contact"><span data-i18n="emailLabel">{{emailLabel}}</span><br><a href="mailto:{{email}}">{{email}}</a></p><a class="text-link" href="{{github}}"><span data-i18n="githubLabel">{{githubLabel}}</span> <span aria-hidden="true">↗</span></a><p class="handle">github.com/mstrhao</p></div></section>
+</main>
+<footer><span data-i18n="footer">{{footer}}</span></footer>
+</div>
+</body></html>
