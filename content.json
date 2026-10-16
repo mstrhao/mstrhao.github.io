@@ -96,8 +96,7 @@
     "blogSearch": "Search posts",
     "blogSearchHint": "Search titles and article text",
     "blogSearchEmpty": "No matching posts.",
-    "blogSearchClear": "Clear",
-    "contactInquiry": "Research assistants, graduate students, and postdoctoral researchers interested in consciousness research and joining our research group are welcome to get in touch."
+    "blogSearchClear": "Clear"
   },
   "zh": {
     "pageTitle": "周浩 | 意识与工作记忆",
@@ -194,8 +193,7 @@
     "blogSearch": "搜索随笔",
     "blogSearchHint": "搜索标题与正文",
     "blogSearchEmpty": "没有匹配的文章。",
-    "blogSearchClear": "清空",
-    "contactInquiry": "对意识研究感兴趣，并希望加入意识研究小组的研究助理、研究生或博士后，欢迎联系咨询。"
+    "blogSearchClear": "清空"
   },
   "publications": [
     {
