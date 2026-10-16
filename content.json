@@ -59,7 +59,8 @@
     "foundationText": "Past collaborative studies used brightness and visual-illusion paradigms, time-resolved neural measurements, and spatially and depth-resolved imaging, providing methodological foundations for current research. The published COGITATE study protocol, to which I contributed, proposed preregistered tests of competing theories and multimodal measurements.",
     "navBlog": "Blog",
     "blogTitle": "Blog",
-    "blogEmpty": "Articles will appear here as they are published."
+    "blogEmpty": "Articles will appear here as they are published.",
+    "navHome": "Home"
   },
   "zh": {
     "pageTitle": "周浩 | 意识与工作记忆",
@@ -119,7 +120,8 @@
     "foundationText": "既往合作研究采用了亮度与视觉错觉范式、时间分辨的神经测量、空间与深度分辨成像，为当前研究提供方法基础。参与的 COGITATE 已发表研究方案提出了预注册的竞争理论检验与跨模态测量计划。",
     "navBlog": "随笔",
     "blogTitle": "思考与随笔",
-    "blogEmpty": "这里将陆续发布研究思考与方法笔记。"
+    "blogEmpty": "这里将陆续发布研究思考与方法笔记。",
+    "navHome": "首页"
   },
   "publications": [
     {

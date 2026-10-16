@@ -1,5 +1,5 @@
 """Build a dependency-free, bilingual site from content.json. Python 3 only."""
-import json, html
+import json, html, re
 from pathlib import Path
 root = Path(__file__).resolve().parent
 data = json.loads((root/'content.json').read_text())
@@ -43,4 +43,4 @@ template = template.replace('{{github}}', html.escape(data['github'], quote=True
 template = template.replace('{{draft_hidden}}', '' if data['draft'] else 'hidden')
 template = template.replace('{{data}}', json.dumps(data, ensure_ascii=False).replace('</', '<\\/'))
 (root/'index.html').write_text(template)
-print('Built index.html')
+print('Built bilingual hash-routed homepage')
