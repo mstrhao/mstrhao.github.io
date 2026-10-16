@@ -63,7 +63,8 @@
     "navHome": "Home",
     "officeLabel": "Office address",
     "officeAddress": "Institute of Neuroscience (神经所系统楼), 320 Yueyang Road, Shanghai, China",
-    "analyticsLink": "Statistics · Sign in"
+    "analyticsLink": "Statistics · Sign in",
+    "pdfLink": "Download PDF"
   },
   "zh": {
     "pageTitle": "周浩 | 意识与工作记忆",
@@ -127,7 +128,8 @@
     "navHome": "首页",
     "officeLabel": "办公地址",
     "officeAddress": "上海市岳阳路320号神经所系统楼",
-    "analyticsLink": "访问统计 · 登录"
+    "analyticsLink": "访问统计 · 登录",
+    "pdfLink": "下载 PDF"
   },
   "publications": [
     {
@@ -146,7 +148,10 @@
       "url": "https://doi.org/10.1371/journal.pone.0268577",
       "kind": "protocol",
       "collaboration": "COGITATE",
-      "published": "2023-02-10"
+      "published": "2023-02-10",
+      "pdf": "papers/cogitate-2023-protocol.pdf",
+      "pdfLicense": "CC BY 4.0",
+      "pdfLicenseUrl": "https://creativecommons.org/licenses/by/4.0/"
     },
     {
       "title": "Spatiotemporal dynamics of brightness coding in human visual cortex revealed by the temporal context effect",
@@ -154,7 +159,10 @@
       "year": "2020",
       "venue": "NeuroImage 205, 116277",
       "url": "https://doi.org/10.1016/j.neuroimage.2019.116277",
-      "kind": "journal"
+      "kind": "journal",
+      "pdf": "papers/zhou-2020-brightness.pdf",
+      "pdfLicense": "CC BY-NC-ND 4.0",
+      "pdfLicenseUrl": "https://creativecommons.org/licenses/by-nc-nd/4.0/"
     },
     {
       "title": "Adaptation to feedback representation of illusory orientation produced from flash grab effect",
@@ -162,7 +170,10 @@
       "year": "2020",
       "venue": "Nature Communications 11, 3925",
       "url": "https://doi.org/10.1038/s41467-020-17786-1",
-      "kind": "journal"
+      "kind": "journal",
+      "pdf": "papers/ge-zhou-2020-illusory-orientation.pdf",
+      "pdfLicense": "CC BY 4.0",
+      "pdfLicenseUrl": "https://creativecommons.org/licenses/by/4.0/"
     },
     {
       "title": "Layer-specific response properties of the human lateral geniculate nucleus and superior colliculus",

@@ -78,6 +78,13 @@
     history.pushState({}, '', '/');
     route();
   }));
+  document.querySelectorAll('.pdf-link').forEach(link => link.addEventListener('click', () => {
+    const paper = content.publications.find(item => item.pdf === link.getAttribute('href'));
+    if (!paper) return;
+    analyticsQueue.push({path: 'pdf-download-click/' + paper.pdf.split('/').pop().replace(/\.pdf$/, ''), title: 'PDF download click: ' + paper.title, event: true, no_session: true, referrer: analyticsReferrer});
+    if (analyticsQueue.length > 30) analyticsQueue.shift();
+    flushAnalytics();
+  }));
   window.addEventListener('popstate', route);
   window.addEventListener('hashchange', route);
   route();

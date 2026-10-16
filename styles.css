@@ -17,3 +17,7 @@ main>section.section,main>section.intro{display:none}body[data-view="home"] main
 .wordmark{font-family:Arial,"Noto Sans CJK SC","Microsoft YaHei",sans-serif;font-size:17px;font-weight:500;font-style:normal;letter-spacing:.01em;white-space:nowrap}@media(max-width:700px){.wordmark{font-size:16px}}
 
 .analytics-link{margin-left:18px;font-size:11px;color:var(--muted);text-decoration:none}.analytics-link:hover{text-decoration:underline}
+
+.pdf-link{display:inline-block;margin-left:20px}
+
+.pdf-license{font-size:11px;color:var(--muted);white-space:nowrap;margin-left:6px}

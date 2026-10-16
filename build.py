@@ -18,7 +18,20 @@ for paper in data['publications']:
     author_html = f'<p class="authors" lang="en">{authors}</p>'
     if paper.get('authorsShort'):
         author_html = f'<p class="authors short-authors" lang="en">{esc(paper["authorsShort"])}</p><details class="author-details"><summary data-i18n="allAuthors">{esc(data["en"]["allAuthors"])}</summary><p class="authors" lang="en">{authors}</p></details>'
-    publications.append(f'<article class="publication"><p class="publication-meta">{esc(paper["year"])} <span aria-hidden="true">/</span> {status}</p><h3 lang="en"><a href="{esc(paper["url"])}">{esc(paper["title"])}</a></h3>{author_html}<a class="text-link" href="{esc(paper["url"])}"><span data-i18n="{key}">{esc(data["en"][key])}</span> <span aria-hidden="true">↗</span></a></article>')
+    pdf_link = ''
+    pdf = paper.get('pdf')
+    if pdf:
+        # Publish only deliberately supplied, repository-local PDF paths.
+        if not isinstance(pdf, str) or not re.fullmatch(r'papers/[A-Za-z0-9][A-Za-z0-9._-]*\.pdf', pdf):
+            raise ValueError('Publication pdf must be a safe local papers/*.pdf path')
+        if not (root/pdf).is_file():
+            raise ValueError(f'Publication PDF is missing: {pdf}')
+        pdf_link = f'<a class="text-link pdf-link" href="{esc(pdf)}" download><span data-i18n="pdfLink">{esc(data["en"]["pdfLink"])}</span> <span aria-hidden="true">↓</span></a>'
+        license_url = paper.get('pdfLicenseUrl', '')
+        if license_url not in ('https://creativecommons.org/licenses/by/4.0/', 'https://creativecommons.org/licenses/by-nc-nd/4.0/'):
+            raise ValueError('Missing approved PDF license URL')
+        pdf_link += f' <a class="pdf-license" href="{esc(license_url)}">{esc(paper["pdfLicense"])}</a>'
+    publications.append(f'<article class="publication"><p class="publication-meta">{esc(paper["year"])} <span aria-hidden="true">/</span> {status}</p><h3 lang="en"><a href="{esc(paper["url"])}">{esc(paper["title"])}</a></h3>{author_html}<a class="text-link" href="{esc(paper["url"])}"><span data-i18n="{key}">{esc(data["en"][key])}</span> <span aria-hidden="true">↗</span></a>{pdf_link}</article>')
 template = template.replace('{{publications}}', '\n'.join(publications))
 notes = ''
 if data['notesAndTools']:
