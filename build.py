@@ -29,6 +29,15 @@ if data['notesAndTools']:
         items.append(f'<li><a href="{html.escape(item["url"], quote=True)}" data-i18n="{key}">{html.escape(item["title"]["en"])}</a></li>')
     notes = '<section class="section" id="notes"><h2 data-i18n="notesTitle">'+data['en']['notesTitle']+'</h2><ul class="notes-list">'+''.join(items)+'</ul></section>'
 template = template.replace('{{notes}}', notes)
+blog_items = []
+for i, post in enumerate(data.get('blogPosts', [])):
+    title_key, summary_key = f'blogTitle{i}', f'blogSummary{i}'
+    for lang in ('en', 'zh'):
+        data[lang][title_key] = post['title'][lang]
+        data[lang][summary_key] = post['summary'][lang]
+    blog_items.append('<article class="blog-post"><p class="publication-meta">'+html.escape(post['date'])+'</p><h3><a href="'+html.escape(post['url'], quote=True)+'" data-i18n="'+title_key+'">'+html.escape(post['title']['en'])+'</a></h3><p data-i18n="'+summary_key+'">'+html.escape(post['summary']['en'])+'</p></article>')
+blog = ''.join(blog_items) if blog_items else '<p class="blog-empty" data-i18n="blogEmpty">'+html.escape(data['en']['blogEmpty'])+'</p>'
+template = template.replace('{{blog}}', blog)
 template = template.replace('{{email}}', html.escape(data['email'], quote=True))
 template = template.replace('{{github}}', html.escape(data['github'], quote=True))
 template = template.replace('{{draft_hidden}}', '' if data['draft'] else 'hidden')
