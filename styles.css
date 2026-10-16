@@ -15,3 +15,5 @@
 main>section.section,main>section.intro{display:none}body[data-view="home"] main>.intro{display:block}body[data-view="home"] #research,body[data-view="projects"] #projects,body[data-view="methods"] #methods,body[data-view="publications"] #publications,body[data-view="blog"] #blog,body[data-view="contact"] #contact{display:grid}nav a[aria-current="page"]{color:var(--ink);text-decoration:underline}body:not([data-view="home"]) main{min-height:55vh}body:not([data-view="home"]) .section{border-top:0;padding-top:56px}body:not([data-view="home"]) .section>h2{font-size:23px;line-height:1.4}body[data-view="blog"] #blog{min-height:45vh}@media(max-width:700px){body:not([data-view="home"]) .section{padding-top:34px}}
 
 .wordmark{font-family:Arial,"Noto Sans CJK SC","Microsoft YaHei",sans-serif;font-size:17px;font-weight:500;font-style:normal;letter-spacing:.01em;white-space:nowrap}@media(max-width:700px){.wordmark{font-size:16px}}
+
+.analytics-link{margin-left:18px;font-size:11px;color:var(--muted);text-decoration:none}.analytics-link:hover{text-decoration:underline}

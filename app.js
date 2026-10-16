@@ -4,6 +4,40 @@
   const button = document.getElementById('language');
   const pageTitles = {projects:'projectsTitle',methods:'methodsTitle',publications:'publicationsTitle',blog:'blogTitle',contact:'contactTitle'};
   let language = 'en';
+  // Public collection endpoint only; no dashboard token or API credential.
+  let analyticsLastPath = null;
+  let analyticsQueue = [];
+  let analyticsReady = false;
+  let analyticsReferrer = '';
+  try {
+    const source = new URL(document.referrer);
+    if (source.origin !== location.origin) analyticsReferrer = source.origin;
+  } catch (_) {}
+  function flushAnalytics() {
+    if (!analyticsReady || !window.goatcounter || !window.goatcounter.count) return;
+    const pending = analyticsQueue;
+    analyticsQueue = [];
+    pending.forEach(item => { try { window.goatcounter.count(item); } catch (_) {} });
+  }
+  function trackView(view) {
+    const path = view === 'home' ? '/' : '/#' + view;
+    if (analyticsLastPath === path) return;
+    analyticsLastPath = path;
+    analyticsQueue.push({path, title: view === 'home' ? content.en.pageTitle : content.en[pageTitles[view]], referrer: analyticsReferrer});
+    if (analyticsQueue.length > 30) analyticsQueue.shift();
+    flushAnalytics();
+  }
+  if (location.hostname === 'mstrhao.github.io') {
+    window.goatcounter = {no_onload: true, no_events: true};
+    const analyticsScript = document.createElement('script');
+    analyticsScript.src = 'https://gc.zgo.at/count.js';
+    analyticsScript.async = true;
+    analyticsScript.setAttribute('data-goatcounter', 'https://mstrhao.goatcounter.com/count');
+    analyticsScript.addEventListener('load', () => { analyticsReady = true; flushAnalytics(); });
+    analyticsScript.addEventListener('error', () => { analyticsQueue = []; });
+    document.head.append(analyticsScript);
+  }
+
   try { const saved = localStorage.getItem('hao-zhou-language'); if (saved === 'en' || saved === 'zh') language = saved; else if (navigator.language.toLowerCase().startsWith('zh')) language = 'zh'; } catch (_) {}
   function render(lang) {
     language = lang;
@@ -30,6 +64,7 @@
       if (active) link.setAttribute('aria-current', 'page'); else link.removeAttribute('aria-current');
     });
     render(language);
+    trackView(view);
     if (view === 'home' && hash === 'research') document.getElementById('research').scrollIntoView();
     else window.scrollTo(0,0);
   }
