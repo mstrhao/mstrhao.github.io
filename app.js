@@ -2,7 +2,7 @@
 (() => {
   const content = JSON.parse(document.getElementById('site-content').textContent);
   const button = document.getElementById('language');
-  const pageTitles = {events:'eventsTitle',projects:'projectsTitle',methods:'methodsTitle',publications:'publicationsTitle',blog:'blogTitle',contact:'contactTitle'};
+  const pageTitles = {'blog-article':'blogTitle',events:'eventsTitle',projects:'projectsTitle',methods:'methodsTitle',publications:'publicationsTitle',blog:'blogTitle',contact:'contactTitle'};
   let language = 'en';
   // Public collection endpoint only; no dashboard token or API credential.
   let analyticsLastPath = null;
@@ -20,10 +20,11 @@
     pending.forEach(item => { try { window.goatcounter.count(item); } catch (_) {} });
   }
   function trackView(view) {
-    const path = view === 'home' ? '/' : '/#' + view;
+    const article = currentBlog();
+    const path = view === 'home' ? '/' : '/#' + (view === 'blog-article' && article ? 'blog/'+article.slug : view);
     if (analyticsLastPath === path) return;
     analyticsLastPath = path;
-    analyticsQueue.push({path, title: view === 'home' ? content.en.pageTitle : content.en[pageTitles[view]], referrer: analyticsReferrer});
+    analyticsQueue.push({path, title: view === 'home' ? content.en.pageTitle : article && view === 'blog-article' ? article.title.en : content.en[pageTitles[view]], referrer: analyticsReferrer});
     if (analyticsQueue.length > 30) analyticsQueue.shift();
     flushAnalytics();
   }
@@ -39,12 +40,15 @@
   }
 
   try { const saved = localStorage.getItem('hao-zhou-language'); if (saved === 'en' || saved === 'zh') language = saved; else if (navigator.language.toLowerCase().startsWith('zh')) language = 'zh'; } catch (_) {}
+  function currentBlog() { return (content.blogPosts || []).find(post => location.hash === '#blog/' + post.slug); }
   function render(lang) {
     language = lang;
     const text = content[lang];
     const view = document.body.dataset.view;
     document.documentElement.lang = lang === 'zh' ? 'zh-CN' : 'en';
-    document.title = pageTitles[view] ? text[pageTitles[view]] + ' | ' + text.name : text.pageTitle;
+    const article = currentBlog();
+    document.querySelectorAll('[data-blog-slug]').forEach(el => { el.hidden = !article || el.dataset.blogSlug !== article.slug; });
+    document.title = article && view === 'blog-article' ? article.title[lang] + ' | ' + text.name : pageTitles[view] ? text[pageTitles[view]] + ' | ' + text.name : text.pageTitle;
     document.querySelector('meta[name="description"]').content = text.intro;
     document.querySelectorAll('[data-i18n]').forEach(el => { el.textContent = text[el.dataset.i18n]; });
     document.querySelector('.other-name').lang = lang === 'zh' ? 'en' : 'zh-CN';
@@ -55,13 +59,14 @@
     button.lang = lang === 'zh' ? 'en' : 'zh-CN';
     button.hidden = false;
     renderEvents();
+    renderRecentEvents();
   }
   function route() {
     const hash = location.hash.slice(1);
-    const view = Object.prototype.hasOwnProperty.call(pageTitles, hash) ? hash : 'home';
+    const view = currentBlog() ? 'blog-article' : hash.startsWith('blog/') ? 'blog' : Object.prototype.hasOwnProperty.call(pageTitles, hash) && hash !== 'blog-article' ? hash : 'home';
     document.body.dataset.view = view;
     document.querySelectorAll('nav a').forEach(link => {
-      const active = link.getAttribute('href') === (view === 'home' ? '/' : '#' + view);
+      const active = link.getAttribute('href') === (view === 'home' ? '/' : view === 'blog-article' ? '#blog' : '#' + view);
       if (active) link.setAttribute('aria-current', 'page'); else link.removeAttribute('aria-current');
     });
     render(language);
@@ -122,6 +127,14 @@
       a.href = source.url; a.rel = 'noreferrer'; article.append(a);
     });
     return article;
+  }
+  function renderRecentEvents() {
+    const todayParts = new Intl.DateTimeFormat('en-CA',{timeZone:eventZone,year:'numeric',month:'2-digit',day:'2-digit'}).formatToParts(new Date());
+    const today = ['year','month','day'].map(key=>todayParts.find(p=>p.type===key).value).join('-');
+    const entries = eventEntries.filter(entry=>entry.category==='public-event' && entry.date.length===10 && entry.date>=today).sort((a,b)=>a.date.localeCompare(b.date)||(a.start||'').localeCompare(b.start||'')).slice(0,3);
+    const target=document.getElementById('recent-events');target.replaceChildren();
+    if(!entries.length) target.append(element('p',content[language].recentNone));
+    entries.forEach(entry=>target.append(element('p',eventDate(entry)+' · '+entry.title[language])));
   }
   function renderEvents() {
     const text = content[language];

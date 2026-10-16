@@ -5,9 +5,9 @@
 <title>{{pageTitle}}</title>
 <meta name="description" content="{{intro}}">
 <meta name="color-scheme" content="light">
-<link rel="stylesheet" href="styles.css?v=20261016-events">
+<link rel="stylesheet" href="styles.css?v=20261016-blogs">
 <script id="site-content" type="application/json">{{data}}</script>
-<script src="app.js?v=20261016-events" defer></script>
+<script src="app.js?v=20261016-blogs" defer></script>
 </head>
 <body data-view="home">
 <a class="skip" href="#main" data-i18n="skip">{{skip}}</a>
@@ -24,7 +24,7 @@
 <p class="affiliation"><span data-i18n="position">{{position}}</span><br><a href="https://english.cebsit.cas.cn/" data-i18n="affiliation">{{affiliation}}</a></p>
 <p class="statement" data-i18n="intro">{{intro}}</p>
 <a class="text-link" href="{{github}}">GitHub <span aria-hidden="true">↗</span></a>
-<p class="calendar-entry"><a class="text-link" href="#events" data-i18n="eventsTitle">{{eventsTitle}}</a></p>
+<div class="calendar-entry"><h2 data-i18n="recentEvents">{{recentEvents}}</h2><div id="recent-events"></div><a class="text-link" href="#events" data-i18n="eventsTitle">{{eventsTitle}}</a></div>
 </section>
 <section class="section" id="research" aria-labelledby="research-title">
 <h2 id="research-title" data-i18n="researchTitle">{{researchTitle}}</h2>
@@ -44,6 +44,7 @@
 </section>
 {{notes}}
 <section class="section" id="blog" aria-labelledby="blog-title"><h2 id="blog-title" data-i18n="blogTitle">{{blogTitle}}</h2><div class="section-body">{{blog}}</div></section>
+<section class="section" id="blog-article"><div class="blog-reading-wrap"><a class="blog-back" href="#blog" data-i18n="backToBlog">{{backToBlog}}</a>{{blogArticles}}</div></section>
 <section class="section" id="events" aria-labelledby="events-title"><h2 id="events-title" data-i18n="eventsTitle">{{eventsTitle}}</h2><div class="section-body">
 <p data-i18n="eventsIntro">{{eventsIntro}}</p>
 <div class="events-views" role="group" aria-label="View"><button type="button" id="events-list-view" aria-pressed="true" data-i18n="eventsList">{{eventsList}}</button><button type="button" id="events-month-view" aria-pressed="false" data-i18n="eventsCalendar">{{eventsCalendar}}</button></div>

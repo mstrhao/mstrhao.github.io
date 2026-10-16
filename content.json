@@ -88,7 +88,11 @@
     "eventsSource": "Source",
     "eventsUntimed": "Date only",
     "eventsPrevious": "Previous month",
-    "eventsNext": "Next month"
+    "eventsNext": "Next month",
+    "backToBlog": "All posts",
+    "readPost": "Read article",
+    "recentEvents": "Upcoming events",
+    "recentNone": "None"
   },
   "zh": {
     "pageTitle": "周浩 | 意识与工作记忆",
@@ -177,7 +181,11 @@
     "eventsSource": "来源",
     "eventsUntimed": "仅日期",
     "eventsPrevious": "上个月",
-    "eventsNext": "下个月"
+    "eventsNext": "下个月",
+    "backToBlog": "全部随笔",
+    "readPost": "阅读全文",
+    "recentEvents": "近期事件",
+    "recentNone": "无"
   },
   "publications": [
     {
@@ -234,7 +242,108 @@
   ],
   "notesAndTools": [],
   "email": "haozhou@ion.ac.cn",
-  "blogPosts": [],
+  "blogPosts": [
+    {
+      "slug": "seeing-our-own-thoughts",
+      "title_zh": "我们如何“看见”自己内心的想法？",
+      "title_en": "How Do We “See” Our Own Thoughts?",
+      "body_zh": [
+        "我们有时会突然觉得两个事情有关，意识到一个判断不对，或者冒出一个还没找到语言表达的念头。这些想法不一定带着图像。“看见”内心的想法，指向的也许是一个更基本的问题：系统内部的活动，怎样成为对主体而言有意义、能够被体验到的内容？",
+        "我想结合内部模型来理解这个问题。这里的模型，是系统组织对象、事件和关系的能力。例如，想到“这件事发生在那件事之前”，需要把两个事件放进一个有方向的关系。同样的信息，被不同的内部模型组织起来，就可以具有不同含义。我的想法是，当前调用的模型所形成的组织，本身就参与构成我们体验到的内容。要解释这个主张，需要说明哪些信息被联系起来、分别处在什么角色，以及这种关系怎样在神经活动中形成。",
+        "那么，内容形成以后，还需要另一个内在的“我”去读取它，才成为体验吗？这种说法容易让我们继续追问：那个读取者又怎样体验？我更愿意先考察，内容的组织与运行本身能解释到什么程度。这里仍有一个实质问题：系统能够利用某种关系完成计算，与主体体验到这个关系之间，究竟有什么区别？给内部状态贴上“可体验”的标签，并没有回答它。",
+        "因此，我想问得更具体一些：改变模型中的关系结构，体验到的内容会怎样变化？哪些运行方式的改变，会使有关信息仍然保留，却不再被体验到？要回答这些问题，需要把内容判断、行为表现和神经活动放在一起比较，区分内容改变与回答方式改变。“看见想法”也许不是在脑内寻找一双眼睛，而是理解什么样的组织与运行，构成了这个具体的想法及其体验。"
+      ],
+      "body_en": [
+        "Sometimes we suddenly recognize a connection between two things, realize that a judgment is wrong, or have a thought we cannot yet put into words. None of these requires a mental picture. “Seeing” our thoughts may point to a more fundamental question: how does activity within a system become meaningful content that the subject experiences?",
+        "I want to approach this through internal models. By a model, I mean a capacity to organize objects, events, and relations. Thinking “this happened before that,” for example, involves placing two events in a directed relation. The same information can have different meanings when organized by different internal models. My proposal is that the organization formed by the currently recruited model helps constitute the content we experience. Explaining this proposal requires specifying which information is linked, which roles its elements occupy, and how those relations are formed in neural activity.",
+        "Once content has formed, does another inner “me” need to read it for experience to occur? That account invites a further question: how does the reader experience anything? I would first examine how far the organization and unfolding of content can take the explanation. A substantive question remains: what distinguishes a system using a relation in a computation from a subject experiencing that relation? Calling an internal state “experienceable” does not answer it.",
+        "We can make the questions more concrete. How does changing a model’s relational structure change experienced content? Which changes in its operation would leave relevant information available without that information being experienced? Answering requires comparing judgments about content, behavior, and neural activity, while distinguishing changes in content from changes in how an answer is produced. Perhaps “seeing a thought” is less about finding a pair of eyes inside the brain than understanding the organization and activity that constitute a particular thought and its experience."
+      ],
+      "references": [
+        {
+          "paragraph": 2,
+          "label": "Mante et al. (2013). Context-dependent computation by recurrent dynamics in prefrontal cortex. Nature, 503, 78–84.",
+          "url": "https://doi.org/10.1038/nature12742",
+          "reading_note_zh": "这项研究结合神经群体活动与循环网络，解释情境如何改变信息的选择和整合；它研究的是选择计算，而非直接检验意识体验。",
+          "reading_note_en": "Neural population activity and recurrent-network modeling explain how context changes information selection and integration; the study concerns choice computations rather than a direct test of conscious experience."
+        },
+        {
+          "paragraph": 4,
+          "label": "King, Pescetelli & Dehaene (2016). Brain Mechanisms Underlying the Brief Maintenance of Seen and Unseen Sensory Information. Neuron.",
+          "url": "https://doi.org/10.1016/j.neuron.2016.10.051",
+          "reading_note_zh": "比较被报告为看见与未看见的刺激信息如何短暂保留，为区分“信息存在”与“内容被体验”提供实验入口，其中看见与否依据被试报告。",
+          "reading_note_en": "Comparing the brief maintenance of information reported as seen or unseen provides an experimental approach to distinguishing information availability from experienced content; visibility was assessed through participants’ reports."
+        }
+      ],
+      "references_heading_zh": "参考文献",
+      "references_heading_en": "References",
+      "references_presentation": {
+        "font_size": "small",
+        "color": "#666666",
+        "link_label": "DOI",
+        "spacing": "compact_with_section_gap"
+      },
+      "date": "2026-10-16",
+      "title": {
+        "en": "How Do We “See” Our Own Thoughts?",
+        "zh": "我们如何“看见”自己内心的想法？"
+      },
+      "summary": {
+        "en": "Sometimes we suddenly recognize a connection between two things, realize that a judgment is wrong, or have a thought we cannot yet put into words.",
+        "zh": "我们有时会突然觉得两个事情有关，意识到一个判断不对，或者冒出一个还没找到语言表达的念头。"
+      }
+    },
+    {
+      "slug": "does-representation-explain-consciousness",
+      "title_zh": "找到意识的表征，就解释了意识吗？",
+      "title_en": "Does Finding a Representation Explain Consciousness?",
+      "body_zh": [
+        "如果从一段神经活动中能够解码出一个人正在想什么，我们是不是就找到了这个想法成为意识的机制？我觉得这里还有一段距离。识别什么活动对应什么内容，与解释内容怎样产生、维持和转换，是不同的问题。把某个时刻的活动模式当成答案，可能会遗漏使这个内容发生的过程。",
+        "一个想法可以在几秒内保持相对稳定，支撑它的神经活动却不必静止。Murray等人的研究表明，在工作记忆任务中，稳定的群体编码可以与明显变化的神经活动共存。这让我关心的是：我们找到的稳定表征，究竟描述了过程中的哪一部分？它保留了什么，又把哪些变化留在了分析之外？",
+        "可以设想，两种过程最终都让我们解码出相同内容，但它们形成这一内容的路径不同。相同的解码结果，并不意味着系统的完整状态相同，也不能据此认定体验相同。我想问，内部模型如何被调用、关系如何逐步形成，是否也是构成体验的一部分？只观察最后留下的模式，可能不足以回答。",
+        "当然，把解释从“表征”换成“动态”，也没有自动解决问题。我们需要说明，改变哪一段过程，会使内容无法形成、难以维持，或转变为另一种内容。记忆可以参与其中，但把信息保存下来，还不足以解释一个主体怎样在当下体验和思考。我更愿意沿着内容发生的过程去研究意识，而不只在某个时刻寻找它的对应物。"
+      ],
+      "body_en": [
+        "If we can decode what someone is thinking from their neural activity, have we found the mechanism that makes the thought conscious? I think there is still a gap. Identifying which activity corresponds to which content differs from explaining how that content forms, persists, and changes. Treating a pattern at one moment as the answer may leave out the process through which the content arises.",
+        "A thought can remain relatively stable for several seconds without the neural activity supporting it standing still. In a working-memory study, Murray and colleagues found that stable population coding could coexist with substantial neural dynamics. This raises a question for me: which part of the process does a stable representation capture? What does it preserve, and which changes fall outside that description?",
+        "Imagine two processes from which we ultimately decode the same content, despite different paths to its formation. Matching decoding results do not establish identical states of the whole system, or identical experiences. Could the recruitment of an internal model and the unfolding formation of relations also be constitutive of experience? Examining only the pattern that remains may not settle the question.",
+        "Replacing “representation” with “dynamics” does not itself provide an explanation. We need to specify which changes to a process prevent content from forming, disrupt its maintenance, or transform it into something else. Memory can participate in these processes, but retaining information does not by itself explain a subject’s present experience and thought. I would rather investigate consciousness through the unfolding formation of content than look only for its counterpart at a particular instant."
+      ],
+      "references": [
+        {
+          "paragraph": 2,
+          "label": "Murray et al. (2017). Stable population coding for working memory coexists with heterogeneous neural dynamics in prefrontal cortex. PNAS, 114, 394–399.",
+          "url": "https://doi.org/10.1073/pnas.1619449114",
+          "reading_note_zh": "稳定的群体编码与变化的神经活动可以共存；这项工作研究工作记忆编码，并未直接检验意识体验。",
+          "reading_note_en": "Stable population coding can coexist with changing neural activity; this study investigates working-memory coding rather than directly testing conscious experience."
+        },
+        {
+          "paragraph": 4,
+          "label": "Stokes et al. (2013). Dynamic Coding for Cognitive Control in Prefrontal Cortex. Neuron, 78, 364–375.",
+          "url": "https://doi.org/10.1016/j.neuron.2013.01.039",
+          "reading_note_zh": "从动态编码理解情境如何组织后续加工，为研究过程而非单个时刻提供一个实例。",
+          "reading_note_en": "Dynamic coding offers an account of how context organizes subsequent processing, illustrating an approach that examines a process rather than a single moment."
+        }
+      ],
+      "references_heading_zh": "参考文献",
+      "references_heading_en": "References",
+      "references_presentation": {
+        "font_size": "small",
+        "color": "#666666",
+        "link_label": "DOI",
+        "spacing": "compact_with_section_gap"
+      },
+      "date": "2026-10-16",
+      "title": {
+        "en": "Does Finding a Representation Explain Consciousness?",
+        "zh": "找到意识的表征，就解释了意识吗？"
+      },
+      "summary": {
+        "en": "If we can decode what someone is thinking from their neural activity, have we found the mechanism that makes the thought conscious? I think there is still a gap.",
+        "zh": "如果从一段神经活动中能够解码出一个人正在想什么，我们是不是就找到了这个想法成为意识的机制？我觉得这里还有一段距离。"
+      }
+    }
+  ],
   "events": [],
   "eventsTimeZone": "Asia/Shanghai"
 }
