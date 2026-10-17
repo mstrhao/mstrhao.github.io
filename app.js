@@ -1,4 +1,4 @@
-import {createCommentsController} from './comments.mjs?v=20261017-comments';
+import {createCommentsController} from './comments.mjs?v=20261017-comments-clean';
 import {commentsConfig} from './comments-config.mjs';
 'use strict';
 (() => {
