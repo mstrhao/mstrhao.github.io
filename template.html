@@ -5,9 +5,9 @@
 <title>{{pageTitle}}</title>
 <meta name="description" content="{{intro}}">
 <meta name="color-scheme" content="light">
-<link rel="stylesheet" href="styles.css?v=20261016-search-event">
+<link rel="stylesheet" href="styles.css?v=20261017-comments">
 <script id="site-content" type="application/json">{{data}}</script>
-<script src="app.js?v=20261016-search-event" defer></script>
+<script src="app.js?v=20261017-comments" type="module"></script>
 </head>
 <body data-view="home">
 <a class="skip" href="#main" data-i18n="skip">{{skip}}</a>
@@ -44,7 +44,7 @@
 </section>
 {{notes}}
 <section class="section" id="blog" aria-labelledby="blog-title"><h2 id="blog-title" data-i18n="blogTitle">{{blogTitle}}</h2><div class="section-body"><div class="blog-search"><label for="blog-search" data-i18n="blogSearch">{{blogSearch}}</label><div class="blog-search-controls"><input id="blog-search" type="search" autocomplete="off" placeholder="{{blogSearchHint}}"><button id="blog-search-clear" type="button" data-i18n="blogSearchClear">{{blogSearchClear}}</button></div></div><p id="blog-search-empty" role="status" data-i18n="blogSearchEmpty" hidden>{{blogSearchEmpty}}</p><div id="blog-results">{{blog}}</div></div></section>
-<section class="section" id="blog-article"><div class="blog-reading-wrap"><a class="blog-back" href="#blog" data-i18n="backToBlog">{{backToBlog}}</a>{{blogArticles}}</div></section>
+<section class="section" id="blog-article"><div class="blog-reading-wrap"><a class="blog-back" href="#blog" data-i18n="backToBlog">{{backToBlog}}</a>{{blogArticles}}<section id="blog-comments" class="blog-comments" aria-label="Comments"></section></div></section>
 <section class="section" id="events" aria-labelledby="events-title"><h2 id="events-title" data-i18n="eventsTitle">{{eventsTitle}}</h2><div class="section-body">
 <p data-i18n="eventsIntro">{{eventsIntro}}</p>
 <div class="events-views" role="group" aria-label="View"><button type="button" id="events-list-view" aria-pressed="true" data-i18n="eventsList">{{eventsList}}</button><button type="button" id="events-month-view" aria-pressed="false" data-i18n="eventsCalendar">{{eventsCalendar}}</button></div>

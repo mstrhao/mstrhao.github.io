@@ -1,7 +1,10 @@
+import {createCommentsController} from './comments.mjs?v=20261017-comments';
+import {commentsConfig} from './comments-config.mjs';
 'use strict';
 (() => {
   const content = JSON.parse(document.getElementById('site-content').textContent);
   const button = document.getElementById('language');
+  const comments = createCommentsController(document.getElementById('blog-comments'), commentsConfig);
   const pageTitles = {'blog-article':'blogTitle',events:'eventsTitle',projects:'projectsTitle',methods:'methodsTitle',publications:'publicationsTitle',blog:'blogTitle',contact:'contactTitle'};
   let language = 'en';
   // Public collection endpoint only; no dashboard token or API credential.
@@ -78,6 +81,7 @@
     renderEvents();
     renderRecentEvents();
     filterBlog();
+    comments.show(view === 'blog-article' && article ? article.slug : null, lang);
   }
   function route() {
     const hash = location.hash.slice(1);
