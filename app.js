@@ -5,7 +5,7 @@ import {commentsConfig} from './comments-config.mjs';
   const content = JSON.parse(document.getElementById('site-content').textContent);
   const button = document.getElementById('language');
   const comments = createCommentsController(document.getElementById('blog-comments'), commentsConfig);
-  const pageTitles = {'blog-article':'blogTitle',events:'eventsTitle',projects:'projectsTitle',methods:'methodsTitle',publications:'publicationsTitle',blog:'blogTitle',contact:'contactTitle'};
+  const pageTitles = {'blog-topic':'topicsTitle','blog-article':'blogTitle',events:'eventsTitle',projects:'projectsTitle',methods:'methodsTitle',publications:'publicationsTitle',blog:'blogTitle',contact:'contactTitle'};
   let language = 'en';
   // Public collection endpoint only; no dashboard token or API credential.
   let analyticsLastPath = null;
@@ -24,7 +24,8 @@ import {commentsConfig} from './comments-config.mjs';
   }
   function trackView(view) {
     const article = currentBlog();
-    const path = view === 'home' ? '/' : '/#' + (view === 'blog-article' && article ? 'blog/'+article.slug : view);
+    const topic = currentTopic();
+    const path = view === 'home' ? '/' : '/#' + (view === 'blog-topic' && topic ? 'topic/'+topic.slug : view === 'blog-article' && article ? 'blog/'+article.slug : view);
     if (analyticsLastPath === path) return;
     analyticsLastPath = path;
     analyticsQueue.push({path, title: view === 'home' ? content.en.pageTitle : article && view === 'blog-article' ? article.title.en : content.en[pageTitles[view]], referrer: analyticsReferrer});
@@ -61,6 +62,29 @@ import {commentsConfig} from './comments-config.mjs';
     const input = document.getElementById('blog-search'); input.value=''; filterBlog(); input.focus();
   });
   function currentBlog() { return (content.blogPosts || []).find(post => location.hash === '#blog/' + post.slug); }
+  function currentTopic() { return (content.blogTopics || []).find(topic => location.hash === '#topic/' + topic.slug); }
+  function renderTopics(lang, article) {
+    const words = content[lang];
+    const make = (tag,text) => { const e=document.createElement(tag); e.textContent=text; return e; };
+    const link = (text,href) => { const e=make('a',text); e.href=href; return e; };
+    const links=document.getElementById('blog-topic-links'); links.replaceChildren();
+    for(const topic of content.blogTopics || []) links.append(link(topic.title[lang],'#topic/'+topic.slug));
+    const target=document.getElementById('blog-topic-content'); target.replaceChildren();
+    const topic=currentTopic();
+    if(topic){
+      target.append(make('h1',topic.title[lang]),make('p',topic.intro[lang]));
+      const posts=topic.articles.map(slug=>content.blogPosts.find(p=>p.slug===slug)).filter(Boolean);
+      if(!posts.length) target.append(make('p',words.topicPreparation));
+      else { target.append(make('h2',words.topicReadingOrder)); const list=make('ol',''); for(const post of posts){const item=make('li','');item.append(link(post.title[lang],'#blog/'+post.slug));list.append(item);}target.append(list); }
+    }
+    const nav=document.getElementById('article-topic-nav');nav.replaceChildren();
+    if(article) for(const group of content.blogTopics || []) {
+      const index=group.articles.indexOf(article.slug);if(index<0)continue;
+      nav.append(link(words.backToTopic+' · '+group.title[lang],'#topic/'+group.slug));
+      const next=content.blogPosts.find(p=>p.slug===group.articles[index+1]);
+      if(next)nav.append(link(words.nextInTopic+' · '+next.title[lang],'#blog/'+next.slug));
+    }
+  }
   function render(lang) {
     language = lang;
     const text = content[lang];
@@ -78,6 +102,8 @@ import {commentsConfig} from './comments-config.mjs';
     button.setAttribute('aria-label', text.switchLabel);
     button.lang = lang === 'zh' ? 'en' : 'zh-CN';
     button.hidden = false;
+    renderTopics(lang, article);
+    if(currentTopic()) document.title=currentTopic().title[lang]+' | '+text.name;
     renderEvents();
     renderRecentEvents();
     filterBlog();
@@ -85,10 +111,10 @@ import {commentsConfig} from './comments-config.mjs';
   }
   function route() {
     const hash = location.hash.slice(1);
-    const view = currentBlog() ? 'blog-article' : hash.startsWith('blog/') ? 'blog' : Object.prototype.hasOwnProperty.call(pageTitles, hash) && hash !== 'blog-article' ? hash : 'home';
+    const view = currentTopic() ? 'blog-topic' : hash.startsWith('topic/') ? 'blog' : currentBlog() ? 'blog-article' : hash.startsWith('blog/') ? 'blog' : Object.prototype.hasOwnProperty.call(pageTitles, hash) && hash !== 'blog-article' && hash !== 'blog-topic' ? hash : 'home';
     document.body.dataset.view = view;
     document.querySelectorAll('nav a').forEach(link => {
-      const active = link.getAttribute('href') === (view === 'home' ? '/' : view === 'blog-article' ? '#blog' : '#' + view);
+      const active = link.getAttribute('href') === (view === 'home' ? '/' : (view === 'blog-article' || view === 'blog-topic') ? '#blog' : '#' + view);
       if (active) link.setAttribute('aria-current', 'page'); else link.removeAttribute('aria-current');
     });
     render(language);

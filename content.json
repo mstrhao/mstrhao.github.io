@@ -96,7 +96,12 @@
     "blogSearch": "Search posts",
     "blogSearchHint": "Search titles and article text",
     "blogSearchEmpty": "No matching posts.",
-    "blogSearchClear": "Clear"
+    "blogSearchClear": "Clear",
+    "topicsTitle": "Topics",
+    "topicPreparation": "Articles in preparation",
+    "topicReadingOrder": "Reading order",
+    "backToTopic": "Back to topic",
+    "nextInTopic": "Next article"
   },
   "zh": {
     "pageTitle": "周浩 | 意识与工作记忆",
@@ -193,7 +198,12 @@
     "blogSearch": "搜索随笔",
     "blogSearchHint": "搜索标题与正文",
     "blogSearchEmpty": "没有匹配的文章。",
-    "blogSearchClear": "清空"
+    "blogSearchClear": "清空",
+    "topicsTitle": "专题",
+    "topicPreparation": "筹备中",
+    "topicReadingOrder": "阅读顺序",
+    "backToTopic": "返回专题",
+    "nextInTopic": "下一篇"
   },
   "publications": [
     {
@@ -368,5 +378,19 @@
       }
     }
   ],
-  "eventsTimeZone": "Asia/Shanghai"
+  "eventsTimeZone": "Asia/Shanghai",
+  "blogTopics": [
+    {
+      "slug": "dendritic-computation",
+      "title": {
+        "en": "Dendritic computation",
+        "zh": "树突计算"
+      },
+      "intro": {
+        "en": "Questions about how dendrites integrate signals and contribute to neural computation.",
+        "zh": "围绕树突如何整合信号、参与神经计算展开讨论。"
+      },
+      "articles": []
+    }
+  ]
 }

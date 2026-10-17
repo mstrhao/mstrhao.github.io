@@ -41,6 +41,18 @@ for event in data.get('events', []):
         if urlparse(source['url']).scheme not in ('https','http') or not urlparse(source['url']).netloc:
             raise ValueError('Source must be a public web URL')
 
+seen_topics = set()
+published_slugs = {post['slug'] for post in data.get('blogPosts', [])}
+for topic in data.get('blogTopics', []):
+    if not re.fullmatch(r'[a-z0-9]+(?:-[a-z0-9]+)*', topic['slug']) or topic['slug'] in seen_topics:
+        raise ValueError('Invalid or duplicate topic slug')
+    seen_topics.add(topic['slug'])
+    if len(topic['articles']) != len(set(topic['articles'])) or not set(topic['articles']).issubset(published_slugs):
+        raise ValueError('Topics may link only published articles, without duplicates')
+    for field in ('title', 'intro'):
+        if any(not isinstance(topic[field][lang],str) or not topic[field][lang].strip() for lang in ('en','zh')):
+            raise ValueError('Topics require bilingual public copy')
+
 template = (root/'template.html').read_text()
 for key, value in data['en'].items():
     template = template.replace('{{'+key+'}}', html.escape(value))
