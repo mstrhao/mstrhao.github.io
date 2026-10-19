@@ -376,6 +376,30 @@
         "zh": "2026年10月24日至26日。",
         "en": "24–26 October 2026."
       }
+    },
+    {
+      "id": "consciousness-science-annual-meeting-2026",
+      "category": "public-event",
+      "date": "2026-11-25",
+      "endDate": "2026-11-26",
+      "title": {
+        "zh": "中国认知科学学会意识科学分会2026学术年会",
+        "en": "2026 Annual Meeting of the Consciousness Science Branch, Chinese Society for Cognitive Science"
+      },
+      "description": {
+        "zh": "11月25日报到，11月26日大会报告与专题报告。摘要提交截止日期：11月14日。11月27日另有独立举办的“意识的神经机制研讨会”，不属于本年会日程。信息依据第一轮通知（2026年9月9日）。",
+        "en": "Registration and check-in on November 25; plenary and thematic presentations on November 26. Abstract deadline: November 14. A separate, independently organized Symposium on Neural Mechanisms of Consciousness takes place on November 27 and is not part of this annual meeting. Based on the first circular dated September 9, 2026."
+      },
+      "location": {
+        "zh": "广州 · 华南师范大学（具体校区与会场待公布）",
+        "en": "South China Normal University, Guangzhou (campus and room to be announced)"
+      },
+      "sources": [
+        {
+          "label": "会议注册 / Registration",
+          "url": "https://member.cogsci.org.cn"
+        }
+      ]
     }
   ],
   "eventsTimeZone": "Asia/Shanghai",
