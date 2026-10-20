@@ -262,6 +262,60 @@
   "email": "haozhou@ion.ac.cn",
   "blogPosts": [
     {
+      "slug": "ai-mathematics-research-roles",
+      "date": "2026-10-20",
+      "title": {
+        "zh": "AI做数学：从解题到理解，研究分工正在改变",
+        "en": "AI in Mathematics: From Solving Problems to Understanding Proofs"
+      },
+      "summary": {
+        "zh": "前沿问题的论证正在被专业数学家展开、简化和理解。这让数学训练的重点变得更清楚：理解论证、审查关键步骤，并判断它究竟解决了什么。",
+        "en": "Arguments addressing frontier problems are being unpacked, simplified, and understood by mathematicians. This sharpens the purpose of mathematical training: understanding arguments, checking crucial steps, and judging what has actually been resolved."
+      },
+      "body_zh": [
+        "2026年10月19日，陶哲轩发表了“Landau–Siegel零点不存在”的证明讲解，梳理此前的AI证明及数学家后续的简化。这涉及原本未解决的研究问题，而不是人类已知答案的测试题。10月19日新增的是专家的理解与梳理，并非当天才宣布突破。",
+        "最有意思的是贡献如何分配。Ben Green的简化版本明确说明，数学论证来自他提示下的ChatGPT，文字则由他本人撰写。因此，不能把后续数学家署名的版本都算成“独立于AI的重新证明”。",
+        "这比“AI能做研究级习题”更进一步：针对前沿问题的论证，正在被专业数学家展开、简化和理解。Banks于10月11日给出了详细论述，Kerr于10月15日发表了简化版本。但仍须留住边界：目前这些是公开预印本和专家论述，我没有独立验证整个证明，也未核实完整的人力、算力成本；更不能说它证明了黎曼猜想。",
+        "我的判断是，在人才培养的问题上，确实不能再用“AI只做重复推导”来安慰自己。更需要训练的是：能否理解并审查AI给出的关键论证，判断它到底解决了什么，以及哪些前提仍未成立。这里看到的是研究分工正在变化，而不是数学训练已经失去价值。"
+      ],
+      "body_en": [
+        "On October 19, 2026, Terence Tao published an exposition of the proof that Landau–Siegel zeros do not exist, discussing an earlier AI proof and mathematicians’ subsequent simplifications. This concerns a previously unresolved research problem, not a test question whose answer humans already knew. What was new on October 19 was an expert’s exposition and understanding, not the initial announcement of a breakthrough.",
+        "The most interesting question is how contributions are attributed. Ben Green’s simplified version explicitly states that its mathematical arguments came from ChatGPT, prompted by him, while he wrote the text himself. Later versions bearing mathematicians’ names therefore cannot all be counted as re-proofs independent of AI.",
+        "This goes beyond AI solving research-level exercises: arguments addressing frontier problems are being unpacked, simplified, and understood by professional mathematicians. Banks provided a detailed account on October 11, and Kerr published a simplification on October 15. Important limits remain: these are public preprints and expert discussions. I have not independently verified the entire proof or established the full human and computational costs. Nor does this amount to proving the Riemann hypothesis.",
+        "My view is that, when thinking about how to train researchers, we can no longer reassure ourselves that AI merely repeats derivations. What needs more emphasis is the ability to understand and scrutinize AI’s crucial arguments, judge exactly what they resolve, and identify which premises remain unestablished. What we are seeing is a change in the division of research work, not the disappearance of the value of mathematical training."
+      ],
+      "references_heading_zh": "原文与相关论述",
+      "references_heading_en": "Sources and related accounts",
+      "references": [
+        {
+          "label": "Terence Tao (2026-10-19). A sketch of the proof of non-existence of Siegel zeroes.",
+          "url": "https://terrytao.wordpress.com/2026/10/19/a-sketch-of-the-proof-of-non-existence-of-siegel-zeroes/",
+          "reading_note_zh": "证明讲解与梳理；并非突破的首次宣布。",
+          "reading_note_en": "An exposition of the proof, rather than the initial announcement of the breakthrough."
+        },
+        {
+          "label": "Ben Green. On Landau–Siegel zeros, version 2.",
+          "url": "https://hexagonmath.org/2610.00311v2",
+          "reading_note_zh": "贡献说明区分了ChatGPT生成的数学论证与作者本人撰写的文字。",
+          "reading_note_en": "The provenance statement distinguishes ChatGPT’s mathematical arguments from the author’s human-written text."
+        },
+        {
+          "label": "William D. Banks (2026-10-11). On the OpenAI proof that Landau-Siegel zeros do not exist.",
+          "url": "https://arxiv.org/abs/2610.15483",
+          "reading_note_zh": "对原证明的详细论述，公开预印本。",
+          "reading_note_en": "A detailed account of the original proof, available as a public preprint."
+        },
+        {
+          "label": "Bryce Kerr (2026-10-15). A simpler proof that there are no Landau–Siegel zeros.",
+          "url": "https://arxiv.org/abs/2610.21099",
+          "reading_note_zh": "对原证明的简化，公开预印本。",
+          "reading_note_en": "A simplification of the original proof, available as a public preprint."
+        }
+      ],
+      "title_zh": "AI做数学：从解题到理解，研究分工正在改变",
+      "title_en": "AI in Mathematics: From Solving Problems to Understanding Proofs"
+    },
+    {
       "slug": "seeing-our-own-thoughts",
       "title_zh": "我们如何“看见”自己内心的想法？",
       "title_en": "How Do We “See” Our Own Thoughts?",
@@ -415,6 +469,21 @@
         "zh": "围绕树突如何整合信号、参与神经计算展开讨论。"
       },
       "articles": []
+    },
+    {
+      "slug": "frontier-updates",
+      "title": {
+        "zh": "前沿动态",
+        "en": "Frontier updates"
+      },
+      "intro": {
+        "zh": "记录研究前沿的新进展，以及它们带来的问题与思考。",
+        "en": "New developments at the research frontier, and the questions and reflections they raise."
+      },
+      "articles": [
+        "ai-mathematics-research-roles"
+      ]
     }
   ]
 }
+

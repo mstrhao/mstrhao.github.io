@@ -112,11 +112,12 @@ for i, post in enumerate(data.get('blogPosts', [])):
     for lang in ('en','zh'): data[lang][refkey] = post['references_heading_'+lang]
     references = []
     for j, ref in enumerate(post.get('references', [])):
-        if not ref['url'].startswith('https://doi.org/'):
-            raise ValueError('References need verified DOI links')
+        if urlparse(ref['url']).scheme != 'https' or not urlparse(ref['url']).netloc:
+            raise ValueError('References need verified HTTPS source links')
+        link_label = 'DOI' if ref['url'].startswith('https://doi.org/') else 'Source'
         key = f'blog{i}Reference{j}Note'
         for lang in ('en','zh'): data[lang][key] = ref['reading_note_'+lang]
-        references.append(f'<li><span lang="en">{esc(ref["label"])}</span> <a href="{esc(ref["url"])}" rel="noreferrer">DOI ↗</a><p data-i18n="{key}">{esc(ref["reading_note_en"])}</p></li>')
+        references.append(f'<li><span lang="en">{esc(ref["label"])}</span> <a href="{esc(ref["url"])}" rel="noreferrer">{link_label} ↗</a><p data-i18n="{key}">{esc(ref["reading_note_en"])}</p></li>')
     articles.append(f'<article class="blog-reading" data-blog-slug="{slug}" hidden><p class="publication-meta">{esc(post["date"])}</p><h1 data-i18n="{title_key}">{esc(post["title"]["en"])}</h1><div class="blog-prose">'+''.join(body)+f'</div><section class="blog-references" aria-labelledby="refs-{slug}"><h2 id="refs-{slug}" data-i18n="{refkey}">{esc(post["references_heading_en"])}</h2><ol>'+''.join(references)+'</ol></section></article>')
 blog = ''.join(blog_items) if blog_items else '<p class="blog-empty" data-i18n="blogEmpty">'+data['en']['blogEmpty']+'</p>'
 template = template.replace('{{blog}}', blog).replace('{{blogArticles}}', ''.join(articles))
@@ -126,3 +127,4 @@ template = template.replace('{{draft_hidden}}', '' if data['draft'] else 'hidden
 template = template.replace('{{data}}', json.dumps(data, ensure_ascii=False).replace('</', '<\\/'))
 (root/'index.html').write_text(template)
 print('Built bilingual hash-routed homepage')
+
