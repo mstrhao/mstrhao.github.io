@@ -518,6 +518,18 @@
       ]
     },
     {
+      "slug": "macaque-optogenetics",
+      "title": {
+        "zh": "猕猴光遗传",
+        "en": "Macaque optogenetics"
+      },
+      "intro": {
+        "zh": "围绕猕猴光遗传研究的方法与问题展开讨论。",
+        "en": "Methods and questions in macaque optogenetics research."
+      },
+      "articles": []
+    },
+    {
       "slug": "dendritic-computation",
       "title": {
         "en": "Dendritic computation",
