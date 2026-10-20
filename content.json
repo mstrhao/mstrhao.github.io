@@ -459,18 +459,6 @@
   "eventsTimeZone": "Asia/Shanghai",
   "blogTopics": [
     {
-      "slug": "dendritic-computation",
-      "title": {
-        "en": "Dendritic computation",
-        "zh": "树突计算"
-      },
-      "intro": {
-        "en": "Questions about how dendrites integrate signals and contribute to neural computation.",
-        "zh": "围绕树突如何整合信号、参与神经计算展开讨论。"
-      },
-      "articles": []
-    },
-    {
       "slug": "frontier-updates",
       "title": {
         "zh": "前沿动态",
@@ -483,6 +471,18 @@
       "articles": [
         "ai-mathematics-research-roles"
       ]
+    },
+    {
+      "slug": "dendritic-computation",
+      "title": {
+        "en": "Dendritic computation",
+        "zh": "树突计算"
+      },
+      "intro": {
+        "en": "Questions about how dendrites integrate signals and contribute to neural computation.",
+        "zh": "围绕树突如何整合信号、参与神经计算展开讨论。"
+      },
+      "articles": []
     }
   ]
 }
