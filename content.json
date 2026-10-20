@@ -262,6 +262,35 @@
   "email": "haozhou@ion.ac.cn",
   "blogPosts": [
     {
+      "slug": "consciousness-as-a-whirlpool",
+      "date": "2026-10-20",
+      "title": {
+        "zh": "意识如漩涡：体验是一种怎样的过程？",
+        "en": "Consciousness as a Whirlpool: What Kind of Process Is Experience?"
+      },
+      "summary": {
+        "zh": "漩涡是一种有组织的运动，不必是水之外的额外实体，也能是真实的现象。这个类比能为理解意识提供什么，又留下了什么问题？",
+        "en": "A whirlpool is organized motion: it can be real without being an extra entity beyond the water. What can this analogy offer our understanding of consciousness, and what does it leave unanswered?"
+      },
+      "body_zh": [
+        "漩涡不是水之外额外添加的一种物质。水不断流入、流出，只要流动的组织方式得以维持，漩涡就可以持续存在；同样一批水，换一种流动方式，漩涡也可能消失。它既不能归结为某一滴水，也不脱离水而独立存在，而是水正在进行的一种有组织的运动。",
+        "把这个类比用于意识，可以提出一种假说：体验不是装在某个神经元里的东西，也不是神经活动之外额外添加的一层存在。当某种神经活动以特定方式组织起来并实际运行时，这个过程本身，就是体验。",
+        "但类比并不等于解释。我们能够明确描述什么样的流动构成漩涡，却还不能同样明确地说明，什么样的神经活动组织构成红色体验或疼痛体验。仅仅“有组织”还不够：漩涡、火焰和机器运转都有组织，这并不意味着它们都有意识。",
+        "漩涡提示的是一种可能的存在方式：不必是一种额外的实体，也可以是真实的现象。意识是否也是如此？如果是，究竟哪一种物理过程构成意识体验？"
+      ],
+      "body_en": [
+        "A whirlpool is not an extra substance added to water. Water continually flows in and out, yet the whirlpool can persist as long as the organization of the flow is maintained. The same water, flowing differently, may no longer form a whirlpool. It is neither reducible to a particular drop nor something that exists independently of water. It is an organized motion that the water is undergoing.",
+        "Applied to consciousness, this analogy suggests a hypothesis: experience is not something stored inside a neuron, nor an extra layer of existence added to neural activity. When neural activity is organized in a particular way and actually unfolds, that process itself is experience.",
+        "But an analogy is not an explanation. We can describe precisely what kind of flow constitutes a whirlpool, yet we cannot describe with comparable precision what organization of neural activity constitutes the experience of red or of pain. Being organized is not enough: whirlpools, flames, and working machines are all organized, but that does not mean they are all conscious.",
+        "A whirlpool points to a possible way of existing: a phenomenon can be real without being an additional entity. Could consciousness be like this? If so, exactly what kind of physical process constitutes conscious experience?"
+      ],
+      "references": [],
+      "references_heading_zh": "参考文献",
+      "references_heading_en": "References",
+      "title_zh": "意识如漩涡：体验是一种怎样的过程？",
+      "title_en": "Consciousness as a Whirlpool: What Kind of Process Is Experience?"
+    },
+    {
       "slug": "ai-mathematics-research-roles",
       "date": "2026-10-20",
       "title": {
@@ -473,6 +502,20 @@
       ]
     },
     {
+      "slug": "consciousness",
+      "title": {
+        "zh": "意识",
+        "en": "Consciousness"
+      },
+      "intro": {
+        "zh": "围绕意识体验的存在方式、内容与机制展开思考。",
+        "en": "Reflections on the nature, content, and mechanisms of conscious experience."
+      },
+      "articles": [
+        "consciousness-as-a-whirlpool"
+      ]
+    },
+    {
       "slug": "dendritic-computation",
       "title": {
         "en": "Dendritic computation",
@@ -486,4 +529,3 @@
     }
   ]
 }
-

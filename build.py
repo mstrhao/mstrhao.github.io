@@ -118,7 +118,8 @@ for i, post in enumerate(data.get('blogPosts', [])):
         key = f'blog{i}Reference{j}Note'
         for lang in ('en','zh'): data[lang][key] = ref['reading_note_'+lang]
         references.append(f'<li><span lang="en">{esc(ref["label"])}</span> <a href="{esc(ref["url"])}" rel="noreferrer">{link_label} ↗</a><p data-i18n="{key}">{esc(ref["reading_note_en"])}</p></li>')
-    articles.append(f'<article class="blog-reading" data-blog-slug="{slug}" hidden><p class="publication-meta">{esc(post["date"])}</p><h1 data-i18n="{title_key}">{esc(post["title"]["en"])}</h1><div class="blog-prose">'+''.join(body)+f'</div><section class="blog-references" aria-labelledby="refs-{slug}"><h2 id="refs-{slug}" data-i18n="{refkey}">{esc(post["references_heading_en"])}</h2><ol>'+''.join(references)+'</ol></section></article>')
+    references_html = (f'<section class="blog-references" aria-labelledby="refs-{slug}"><h2 id="refs-{slug}" data-i18n="{refkey}">{esc(post["references_heading_en"])}</h2><ol>'+''.join(references)+'</ol></section>') if references else ''
+    articles.append(f'<article class="blog-reading" data-blog-slug="{slug}" hidden><p class="publication-meta">{esc(post["date"])}</p><h1 data-i18n="{title_key}">{esc(post["title"]["en"])}</h1><div class="blog-prose">'+''.join(body)+'</div>'+references_html+'</article>')
 blog = ''.join(blog_items) if blog_items else '<p class="blog-empty" data-i18n="blogEmpty">'+data['en']['blogEmpty']+'</p>'
 template = template.replace('{{blog}}', blog).replace('{{blogArticles}}', ''.join(articles))
 template = template.replace('{{email}}', html.escape(data['email'], quote=True))
