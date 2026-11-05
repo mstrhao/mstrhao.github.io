@@ -239,7 +239,22 @@
     "project2Status": "Published research",
     "project3Status": "Published study protocol",
     "project4Status": "Future directions",
-    "researchMore": "Explore research directions"
+    "researchMore": "Explore research directions",
+    "blogGeopoliticsTitle": "Trump’s Foreign Policy: Redistributing Costs in Global Networks",
+    "blogGeopoliticsSummary": "Why does Trump press Europe to take greater responsibility for its security while negotiating with China and Russia and taking military action against Iran?",
+    "blogGeopoliticsReferences": "Sources",
+    "blogGeopoliticsParagraph0": "Why does Trump press Europe to take greater responsibility for its security while negotiating with China and Russia and taking military action against Iran? To understand these choices, we can first consider the United States’ position in global networks, then examine how personal style and domestic politics shape its decisions.",
+    "blogGeopoliticsParagraph1": "With an ocean on either side, the United States has more room than European countries to adjust its commitments when faced with war in Europe. But alliances also provide the United States with bases, intelligence, and influence. Cutting expenditure may ease the burden, but it may also cost the cooperation needed to sustain its advantages.",
+    "blogGeopoliticsParagraph2": "The Trump administration’s National Security Strategy emphasizes shifting and sharing security burdens, calling on allies to take greater responsibility for security in their own regions. This helps explain American pressure on Europe. Asking Europe to shoulder more of the burden, however, is a different question from whether the United States is abandoning Ukraine entirely.",
+    "blogGeopoliticsParagraph3": "Russia raises questions of nuclear risk and European security. China, in addition to being a military competitor, is deeply embedded in manufacturing, critical-mineral supply chains, and trade networks. Different relationships connect different interests, calling for different forms of pressure. Competition and negotiation can take place at the same time, but this is not enough to establish the existence of a comprehensive plan to drive China and Russia apart.",
+    "blogGeopoliticsParagraph4": "The Middle East presents another tension. The United States is now a net energy exporter, yet it remains exposed to global oil prices. Allies’ security, shipping routes, and nuclear proliferation also continue to shape its choices. Military action against Iran can be analyzed within these constraints.",
+    "blogGeopoliticsParagraph5": "Similar tensions arise in the economy. The dollar’s international role depends on financial markets, demand for assets, and transaction networks, extending far beyond oil payments. The benefits the United States gains from globalization and the costs of industrial adjustment do not fall on the same groups of people. Preserving financial and market advantages, protecting manufacturing jobs, and reducing overseas commitments are goals that can conflict.",
+    "blogGeopoliticsParagraph6": "From this perspective, Biden’s cultivation of alliances and Trump’s transactional pressure can be understood as different valuations of the benefits of cooperation, immediate costs, and risks. This is only a framework for comparison: both administrations use negotiation, sanctions, and military force, and their policies are also shaped by elections, interest groups, and misjudgments.",
+    "blogGeopoliticsParagraph7": "The more interesting questions concern feedback. As allies increase their commitments, will they become more dependent on the United States or develop alternative partnerships? When rivals come under pressure, will they concede or move closer together? Global order changes through these mutual responses. Evaluating a policy requires examining the relationships it changes and whether short-term savings come at the expense of the capacity for long-term cooperation.",
+    "blogGeopoliticsReference0": "U.S. National Security Strategy",
+    "blogGeopoliticsReference1": "NATO’s Hague Summit Declaration",
+    "blogGeopoliticsReference2": "IEA Global Critical Minerals Outlook",
+    "blogGeopoliticsReference3": "Federal Reserve analysis of the dollar’s international role"
   },
   "zh": {
     "pageTitle": "周浩 | 意识与工作记忆",
@@ -479,7 +494,22 @@
     "project2Status": "已发表研究",
     "project3Status": "已发表研究方案",
     "project4Status": "未来方向",
-    "researchMore": "查看研究方向"
+    "researchMore": "查看研究方向",
+    "blogGeopoliticsTitle": "特朗普外交：全球网络中的成本重分配",
+    "blogGeopoliticsSummary": "特朗普为何一面要求欧洲承担更多安全责任，一面与中俄谈判，又对伊朗动武？",
+    "blogGeopoliticsReferences": "参考资料",
+    "blogGeopoliticsParagraph0": "特朗普为何一面要求欧洲承担更多安全责任，一面与中俄谈判，又对伊朗动武？理解这些选择，可以先看美国在全球网络中的位置，再看个人风格与国内政治如何影响决策。",
+    "blogGeopoliticsParagraph1": "美国隔着两大洋，面对欧洲战争时，比欧洲国家多一些调整投入的余地。但联盟也为美国提供基地、情报和影响力。减少支出可能减轻负担，也可能损失维持优势所需的合作。",
+    "blogGeopoliticsParagraph2": "特朗普政府的《国家安全战略》强调转移和分担安全负担，希望盟友更多负责所在地区的安全。这有助于理解美国对欧洲的施压。不过，要求欧洲多承担，与美国是否完全放弃乌克兰，是两个不同的问题。",
+    "blogGeopoliticsParagraph3": "俄罗斯牵涉核风险与欧洲安全；中国除了军事竞争，还深嵌制造业、关键矿产和贸易网络。关系所连接的利益不同，施压方式也不同。竞争和谈判可以同时发生，但这不足以证明存在一套能把中俄分开的完整计划。",
+    "blogGeopoliticsParagraph4": "中东呈现另一种张力。美国已是能源净出口国，却仍受全球油价影响；盟友安全、航道和核扩散也继续影响它的选择。对伊朗动武可以放进这些约束中分析。",
+    "blogGeopoliticsParagraph5": "经济层面也存在类似矛盾。美元的国际地位依赖金融市场、资产需求和交易网络，远不止石油结算。美国从全球化中获得的收益，与产业调整的成本，并不落在同一批人身上。维持金融与市场优势、保护制造业就业、减少海外投入，这些目标之间可能相互冲突。",
+    "blogGeopoliticsParagraph6": "由此看，拜登式联盟经营与特朗普式交易施压，可以理解为对合作收益、即时成本和风险的不同估值。这只是比较框架：两届政府都使用谈判、制裁和军事力量；政策也会受到选举、利益集团和误判影响。",
+    "blogGeopoliticsParagraph7": "更值得追问的是反馈：盟友增加投入后，会更依赖美国，还是发展替代合作？对手承压后，会让步，还是靠得更近？全球秩序会在这些相互回应中改变。判断一项政策，需要看它改变了怎样的关系，以及短期节省是否以长期合作能力为代价。",
+    "blogGeopoliticsReference0": "美国国家安全战略",
+    "blogGeopoliticsReference1": "北约海牙宣言",
+    "blogGeopoliticsReference2": "IEA 关键矿产报告",
+    "blogGeopoliticsReference3": "美联储关于美元国际地位的分析"
   },
   "publications": [
     {
@@ -537,6 +567,67 @@
   "notesAndTools": [],
   "email": "haozhou@ion.ac.cn",
   "blogPosts": [
+    {
+      "slug": "trump-foreign-policy-and-cost-redistribution",
+      "date": "2026-11-05",
+      "title": {
+        "zh": "特朗普外交：全球网络中的成本重分配",
+        "en": "Trump’s Foreign Policy: Redistributing Costs in Global Networks"
+      },
+      "summary": {
+        "zh": "特朗普为何一面要求欧洲承担更多安全责任，一面与中俄谈判，又对伊朗动武？",
+        "en": "Why does Trump press Europe to take greater responsibility for its security while negotiating with China and Russia and taking military action against Iran?"
+      },
+      "body_zh": [
+        "特朗普为何一面要求欧洲承担更多安全责任，一面与中俄谈判，又对伊朗动武？理解这些选择，可以先看美国在全球网络中的位置，再看个人风格与国内政治如何影响决策。",
+        "美国隔着两大洋，面对欧洲战争时，比欧洲国家多一些调整投入的余地。但联盟也为美国提供基地、情报和影响力。减少支出可能减轻负担，也可能损失维持优势所需的合作。",
+        "特朗普政府的《国家安全战略》强调转移和分担安全负担，希望盟友更多负责所在地区的安全。这有助于理解美国对欧洲的施压。不过，要求欧洲多承担，与美国是否完全放弃乌克兰，是两个不同的问题。",
+        "俄罗斯牵涉核风险与欧洲安全；中国除了军事竞争，还深嵌制造业、关键矿产和贸易网络。关系所连接的利益不同，施压方式也不同。竞争和谈判可以同时发生，但这不足以证明存在一套能把中俄分开的完整计划。",
+        "中东呈现另一种张力。美国已是能源净出口国，却仍受全球油价影响；盟友安全、航道和核扩散也继续影响它的选择。对伊朗动武可以放进这些约束中分析。",
+        "经济层面也存在类似矛盾。美元的国际地位依赖金融市场、资产需求和交易网络，远不止石油结算。美国从全球化中获得的收益，与产业调整的成本，并不落在同一批人身上。维持金融与市场优势、保护制造业就业、减少海外投入，这些目标之间可能相互冲突。",
+        "由此看，拜登式联盟经营与特朗普式交易施压，可以理解为对合作收益、即时成本和风险的不同估值。这只是比较框架：两届政府都使用谈判、制裁和军事力量；政策也会受到选举、利益集团和误判影响。",
+        "更值得追问的是反馈：盟友增加投入后，会更依赖美国，还是发展替代合作？对手承压后，会让步，还是靠得更近？全球秩序会在这些相互回应中改变。判断一项政策，需要看它改变了怎样的关系，以及短期节省是否以长期合作能力为代价。"
+      ],
+      "body_en": [
+        "Why does Trump press Europe to take greater responsibility for its security while negotiating with China and Russia and taking military action against Iran? To understand these choices, we can first consider the United States’ position in global networks, then examine how personal style and domestic politics shape its decisions.",
+        "With an ocean on either side, the United States has more room than European countries to adjust its commitments when faced with war in Europe. But alliances also provide the United States with bases, intelligence, and influence. Cutting expenditure may ease the burden, but it may also cost the cooperation needed to sustain its advantages.",
+        "The Trump administration’s National Security Strategy emphasizes shifting and sharing security burdens, calling on allies to take greater responsibility for security in their own regions. This helps explain American pressure on Europe. Asking Europe to shoulder more of the burden, however, is a different question from whether the United States is abandoning Ukraine entirely.",
+        "Russia raises questions of nuclear risk and European security. China, in addition to being a military competitor, is deeply embedded in manufacturing, critical-mineral supply chains, and trade networks. Different relationships connect different interests, calling for different forms of pressure. Competition and negotiation can take place at the same time, but this is not enough to establish the existence of a comprehensive plan to drive China and Russia apart.",
+        "The Middle East presents another tension. The United States is now a net energy exporter, yet it remains exposed to global oil prices. Allies’ security, shipping routes, and nuclear proliferation also continue to shape its choices. Military action against Iran can be analyzed within these constraints.",
+        "Similar tensions arise in the economy. The dollar’s international role depends on financial markets, demand for assets, and transaction networks, extending far beyond oil payments. The benefits the United States gains from globalization and the costs of industrial adjustment do not fall on the same groups of people. Preserving financial and market advantages, protecting manufacturing jobs, and reducing overseas commitments are goals that can conflict.",
+        "From this perspective, Biden’s cultivation of alliances and Trump’s transactional pressure can be understood as different valuations of the benefits of cooperation, immediate costs, and risks. This is only a framework for comparison: both administrations use negotiation, sanctions, and military force, and their policies are also shaped by elections, interest groups, and misjudgments.",
+        "The more interesting questions concern feedback. As allies increase their commitments, will they become more dependent on the United States or develop alternative partnerships? When rivals come under pressure, will they concede or move closer together? Global order changes through these mutual responses. Evaluating a policy requires examining the relationships it changes and whether short-term savings come at the expense of the capacity for long-term cooperation."
+      ],
+      "references": [
+        {
+          "label": "National Security Strategy of the United States of America (2025)",
+          "url": "https://www.whitehouse.gov/wp-content/uploads/2025/12/2025-National-Security-Strategy.pdf",
+          "label_zh": "美国国家安全战略",
+          "label_en": "U.S. National Security Strategy"
+        },
+        {
+          "label": "NATO, The Hague Summit Declaration (2025)",
+          "url": "https://www.nato.int/en/about-us/official-texts-and-resources/official-texts/2025/06/25/the-hague-summit-declaration",
+          "label_zh": "北约海牙宣言",
+          "label_en": "NATO’s Hague Summit Declaration"
+        },
+        {
+          "label": "IEA, Global Critical Minerals Outlook 2025: Executive Summary",
+          "url": "https://www.iea.org/reports/global-critical-minerals-outlook-2025/executive-summary",
+          "label_zh": "IEA 关键矿产报告",
+          "label_en": "IEA Global Critical Minerals Outlook"
+        },
+        {
+          "label": "Federal Reserve, The International Role of the U.S. Dollar – 2025 Edition",
+          "url": "https://www.federalreserve.gov/econres/notes/feds-notes/the-international-role-of-the-u-s-dollar-2025-edition-20250718.html",
+          "label_zh": "美联储关于美元国际地位的分析",
+          "label_en": "Federal Reserve analysis of the dollar’s international role"
+        }
+      ],
+      "references_heading_zh": "参考资料",
+      "references_heading_en": "Sources",
+      "original_language": "zh"
+    },
     {
       "slug": "how-machines-know-themselves",
       "date": "2026-11-04",
@@ -1268,7 +1359,8 @@
         "en": "Starting with concrete questions to explore connections between principles of organization across different scales."
       },
       "articles": [
-        "from-local-interactions-to-global-order"
+        "from-local-interactions-to-global-order",
+        "trump-foreign-policy-and-cost-redistribution"
       ]
     }
   ]
