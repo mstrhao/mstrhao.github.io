@@ -483,6 +483,24 @@
           "url": "https://member.cogsci.org.cn"
         }
       ]
+    },
+    {
+      "id": "institute-of-neuroscience-annual-meeting-2026",
+      "category": "public-event",
+      "date": "2026-12-20",
+      "endDate": "2026-12-22",
+      "title": {
+        "zh": "2026年脑智卓越中心（神经科学研究所）学术年会",
+        "en": "2026 CEBSIT (Institute of Neuroscience) Annual Academic Meeting"
+      },
+      "description": {
+        "zh": "中国科学院脑科学与智能技术卓越创新中心（神经科学研究所）学术年会。日期与地点依据第一轮会议通知（2026年11月4日）。",
+        "en": "Annual academic meeting of the CAS Center for Excellence in Brain Science and Intelligence Technology (Institute of Neuroscience). Dates and venue follow the first circular dated 4 November 2026."
+      },
+      "location": {
+        "zh": "上海 · 中国科学院上海学术活动中心（好望角大饭店），徐汇区肇嘉浜路500号",
+        "en": "Shanghai Academic Activity Center, Chinese Academy of Sciences (Hope Hotel), 500 Zhaojiabang Road, Xuhui District, Shanghai"
+      }
     }
   ],
   "eventsTimeZone": "Asia/Shanghai",
