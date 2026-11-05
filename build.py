@@ -92,36 +92,17 @@ if data['notesAndTools']:
         items.append(f'<li><a href="{html.escape(item["url"], quote=True)}" data-i18n="{key}">{html.escape(item["title"]["en"])}</a></li>')
     notes = '<section class="section" id="notes"><h2 data-i18n="notesTitle">'+data['en']['notesTitle']+'</h2><ul class="notes-list">'+''.join(items)+'</ul></section>'
 template = template.replace('{{notes}}', notes)
-blog_items, articles = [], []
-for i, post in enumerate(data.get('blogPosts', [])):
-    slug = post['slug']
-    if not re.fullmatch(r'[a-z0-9]+(?:-[a-z0-9]+)*', slug):
-        raise ValueError('Invalid blog slug')
-    title_key, summary_key = f'blogTitle{i}', f'blogSummary{i}'
-    for lang in ('en', 'zh'):
-        data[lang][title_key] = post['title'][lang]
-        data[lang][summary_key] = post['summary'][lang]
-    esc = lambda x: html.escape(str(x), quote=True)
-    blog_items.append(f'<article class="blog-post"><p class="publication-meta">{esc(post["date"])}</p><h3><a href="#blog/{slug}" data-i18n="{title_key}">{esc(post["title"]["en"])}</a></h3><p data-i18n="{summary_key}">{esc(post["summary"]["en"])}</p><a class="text-link" href="#blog/{slug}" data-i18n="readPost">{esc(data["en"]["readPost"])}</a></article>')
-    body = []
-    for j, paragraph in enumerate(post['body_en']):
-        key = f'blog{i}Paragraph{j}'
-        for lang in ('en','zh'): data[lang][key] = post['body_'+lang][j]
-        body.append(f'<p data-i18n="{key}">{esc(paragraph)}</p>')
-    refkey = f'blog{i}References'
-    for lang in ('en','zh'): data[lang][refkey] = post['references_heading_'+lang]
-    references = []
-    for j, ref in enumerate(post.get('references', [])):
-        if urlparse(ref['url']).scheme != 'https' or not urlparse(ref['url']).netloc:
-            raise ValueError('References need verified HTTPS source links')
-        link_label = 'DOI' if ref['url'].startswith('https://doi.org/') else 'Source'
-        key = f'blog{i}Reference{j}Note'
-        for lang in ('en','zh'): data[lang][key] = ref['reading_note_'+lang]
-        references.append(f'<li><span lang="en">{esc(ref["label"])}</span> <a href="{esc(ref["url"])}" rel="noreferrer">{link_label} ↗</a><p data-i18n="{key}">{esc(ref["reading_note_en"])}</p></li>')
-    references_html = (f'<section class="blog-references" aria-labelledby="refs-{slug}"><h2 id="refs-{slug}" data-i18n="{refkey}">{esc(post["references_heading_en"])}</h2><ol>'+''.join(references)+'</ol></section>') if references else ''
-    articles.append(f'<article class="blog-reading" data-blog-slug="{slug}" hidden><p class="publication-meta">{esc(post["date"])}</p><h1 data-i18n="{title_key}">{esc(post["title"]["en"])}</h1><div class="blog-prose">'+''.join(body)+'</div>'+references_html+'</article>')
-blog = ''.join(blog_items) if blog_items else '<p class="blog-empty" data-i18n="blogEmpty">'+data['en']['blogEmpty']+'</p>'
-template = template.replace('{{blog}}', blog).replace('{{blogArticles}}', ''.join(articles))
+# Rich blog layouts are maintained in source partials; metadata and translations
+# remain in content.json. Validate the relationship instead of dropping rich content.
+blog = (root/'partials/blog-list.html').read_text()
+articles = (root/'partials/blog-articles.html').read_text()
+article_slugs = re.findall(r'data-blog-slug="([^"]+)"', articles)
+if len(article_slugs) != len(set(article_slugs)) or set(article_slugs) != published_slugs:
+    raise ValueError('Blog article partials must match the published metadata')
+for key in re.findall(r'data-i18n="([^"]+)"', blog + articles):
+    if any(key not in data[lang] for lang in ('en', 'zh')):
+        raise ValueError(f'Missing bilingual blog translation: {key}')
+template = template.replace('{{blog}}', blog).replace('{{blogArticles}}', articles)
 template = template.replace('{{email}}', html.escape(data['email'], quote=True))
 template = template.replace('{{github}}', html.escape(data['github'], quote=True))
 template = template.replace('{{draft_hidden}}', '' if data['draft'] else 'hidden')
