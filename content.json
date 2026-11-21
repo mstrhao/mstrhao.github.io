@@ -254,7 +254,18 @@
     "blogGeopoliticsReference0": "U.S. National Security Strategy",
     "blogGeopoliticsReference1": "NATO’s Hague Summit Declaration",
     "blogGeopoliticsReference2": "IEA Global Critical Minerals Outlook",
-    "blogGeopoliticsReference3": "Federal Reserve analysis of the dollar’s international role"
+    "blogGeopoliticsReference3": "Federal Reserve analysis of the dollar’s international role",
+    "blogShenzhenTitle": "In an Age of Abundance, What Do Great Powers Still Compete For?",
+    "blogShenzhenSummary": "The world can now produce enough to weaken the logic of “take it or go without.” But countries still worry about being cut off when it matters most.",
+    "blogShenzhenParagraph0Part0": "What caught my attention at the Shenzhen meeting was the line in the joint declaration about increasing supplies of refined petroleum products. With so much that China, the United States and Russia disagree on, why could they still sit down and talk about diesel?",
+    "blogShenzhenParagraph1Part0": "The world can now produce enough to weaken the logic of “take it or go without.” But countries still worry about being cut off when it matters most.",
+    "blogShenzhenParagraph2Part0": "In October, Gulf crude exports were back above 80 percent of prewar levels, but exports of refined products and liquefied petroleum gas were still around half. An extra tanker of crude is no immediate help to a place short of diesel. Where the refineries are, whether ships can sail and whether cargo can reach port determine who gets fuel and who has to wait.",
+    "blogShenzhenParagraph3Part0": "What makes great-power competition interesting today is that everyone relies on the same supply network. In normal times, goods come from whoever can make them more cheaply. When things go wrong, having other refineries, routes or buyers gives you room to maneuver. ",
+    "blogShenzhenParagraph3Part1": "Alternative suppliers do more than keep goods flowing after a cutoff. If the other side knows you have somewhere else to turn, threatening to cut you off carries less weight at the negotiating table.",
+    "blogShenzhenParagraph3Part2": " That room to maneuver is what lets countries keep doing business with each other.",
+    "blogShenzhenParagraph4Part0": "The three countries can work together to get fuel moving without settling who wins on every other issue. That is what makes the Shenzhen meeting worth watching. Next, see which cargoes actually get loaded and reach port.",
+    "blogShenzhenReference0": "Shenzhen Declaration",
+    "blogShenzhenReference1": "IEA November Oil Market Report"
   },
   "zh": {
     "pageTitle": "周浩 | 意识与工作记忆",
@@ -509,7 +520,18 @@
     "blogGeopoliticsReference0": "美国国家安全战略",
     "blogGeopoliticsReference1": "北约海牙宣言",
     "blogGeopoliticsReference2": "IEA 关键矿产报告",
-    "blogGeopoliticsReference3": "美联储关于美元国际地位的分析"
+    "blogGeopoliticsReference3": "美联储关于美元国际地位的分析",
+    "blogShenzhenTitle": "富足之后，大国还在争什么？",
+    "blogShenzhenSummary": "世界的生产能力已经足以显著削弱「不抢就不够用」的逻辑，但没有消除「关键时刻别人会不会断供」的焦虑。",
+    "blogShenzhenParagraph0Part0": "深圳三国会谈，我最感兴趣的是联合宣言里那句增加成品油供应。中美俄有那么多谈不拢的事，为什么还能坐下来谈柴油？",
+    "blogShenzhenParagraph1Part0": "世界的生产能力已经足以显著削弱「不抢就不够用」的逻辑，但没有消除「关键时刻别人会不会断供」的焦虑。",
+    "blogShenzhenParagraph2Part0": "10 月，海湾原油出口已经恢复到战前的八成多，成品油和液化石油气却只有战前的一半左右。全球多出一船原油，缺柴油的地方也不能直接拿来用。炼厂在哪儿，船能不能走，货能不能进港，这几件事决定了谁能买到、谁只能等。",
+    "blogShenzhenParagraph3Part0": "这就是今天大国竞争有意思的地方：大家用的是同一张供应网。平时，谁能做得更便宜，货就从谁那里来；出了事，谁有别的炼厂、别的航线、别的买家，谁就有余地。",
+    "blogShenzhenParagraph3Part1": "替代来源的价值，不只是断供以后能救急。别人知道你有得选，断供在谈判桌上就没那么好使。",
+    "blogShenzhenParagraph3Part2": "有这个余地，才敢继续做生意。",
+    "blogShenzhenParagraph4Part0": "三国不用在所有问题上分出胜负，也能一起把一条供应线接起来。深圳会谈值得看的就是这件事。接下来，看哪一批油能装船、能到港。",
+    "blogShenzhenReference0": "深圳宣言",
+    "blogShenzhenReference1": "国际能源署 11 月报告"
   },
   "publications": [
     {
@@ -567,6 +589,47 @@
   "notesAndTools": [],
   "email": "haozhou@ion.ac.cn",
   "blogPosts": [
+    {
+      "slug": "what-great-powers-compete-for-after-abundance",
+      "date": "2026-11-21",
+      "title": {
+        "zh": "富足之后，大国还在争什么？",
+        "en": "In an Age of Abundance, What Do Great Powers Still Compete For?"
+      },
+      "summary": {
+        "zh": "世界的生产能力已经足以显著削弱「不抢就不够用」的逻辑，但没有消除「关键时刻别人会不会断供」的焦虑。",
+        "en": "The world can now produce enough to weaken the logic of “take it or go without.” But countries still worry about being cut off when it matters most."
+      },
+      "body_zh": [
+        "深圳三国会谈，我最感兴趣的是联合宣言里那句增加成品油供应。中美俄有那么多谈不拢的事，为什么还能坐下来谈柴油？",
+        "世界的生产能力已经足以显著削弱「不抢就不够用」的逻辑，但没有消除「关键时刻别人会不会断供」的焦虑。",
+        "10 月，海湾原油出口已经恢复到战前的八成多，成品油和液化石油气却只有战前的一半左右。全球多出一船原油，缺柴油的地方也不能直接拿来用。炼厂在哪儿，船能不能走，货能不能进港，这几件事决定了谁能买到、谁只能等。",
+        "这就是今天大国竞争有意思的地方：大家用的是同一张供应网。平时，谁能做得更便宜，货就从谁那里来；出了事，谁有别的炼厂、别的航线、别的买家，谁就有余地。替代来源的价值，不只是断供以后能救急。别人知道你有得选，断供在谈判桌上就没那么好使。有这个余地，才敢继续做生意。",
+        "三国不用在所有问题上分出胜负，也能一起把一条供应线接起来。深圳会谈值得看的就是这件事。接下来，看哪一批油能装船、能到港。"
+      ],
+      "body_en": [
+        "What caught my attention at the Shenzhen meeting was the line in the joint declaration about increasing supplies of refined petroleum products. With so much that China, the United States and Russia disagree on, why could they still sit down and talk about diesel?",
+        "The world can now produce enough to weaken the logic of “take it or go without.” But countries still worry about being cut off when it matters most.",
+        "In October, Gulf crude exports were back above 80 percent of prewar levels, but exports of refined products and liquefied petroleum gas were still around half. An extra tanker of crude is no immediate help to a place short of diesel. Where the refineries are, whether ships can sail and whether cargo can reach port determine who gets fuel and who has to wait.",
+        "What makes great-power competition interesting today is that everyone relies on the same supply network. In normal times, goods come from whoever can make them more cheaply. When things go wrong, having other refineries, routes or buyers gives you room to maneuver. Alternative suppliers do more than keep goods flowing after a cutoff. If the other side knows you have somewhere else to turn, threatening to cut you off carries less weight at the negotiating table. That room to maneuver is what lets countries keep doing business with each other.",
+        "The three countries can work together to get fuel moving without settling who wins on every other issue. That is what makes the Shenzhen meeting worth watching. Next, see which cargoes actually get loaded and reach port."
+      ],
+      "references": [
+        {
+          "label": "深圳宣言",
+          "label_zh": "深圳宣言",
+          "label_en": "Shenzhen Declaration",
+          "url": "https://english.www.gov.cn/news/202611/19/content_WS6afeda1ac6d00ca5f9a0e790.html"
+        },
+        {
+          "label": "国际能源署 11 月报告",
+          "label_zh": "国际能源署 11 月报告",
+          "label_en": "IEA November Oil Market Report",
+          "url": "https://www.iea.org/reports/oil-market-report-november-2026"
+        }
+      ],
+      "original_language": "zh"
+    },
     {
       "slug": "trump-foreign-policy-and-cost-redistribution",
       "date": "2026-11-05",
@@ -1360,7 +1423,8 @@
       },
       "articles": [
         "from-local-interactions-to-global-order",
-        "trump-foreign-policy-and-cost-redistribution"
+        "trump-foreign-policy-and-cost-redistribution",
+        "what-great-powers-compete-for-after-abundance"
       ]
     }
   ]
