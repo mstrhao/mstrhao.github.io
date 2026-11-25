@@ -1330,6 +1330,30 @@
         "zh": "上海 · 中国科学院上海学术活动中心（好望角大饭店），徐汇区肇嘉浜路500号",
         "en": "Shanghai Academic Activity Center, Chinese Academy of Sciences (Hope Hotel), 500 Zhaojiabang Road, Xuhui District, Shanghai"
       }
+    },
+    {
+      "id": "assc30-2027",
+      "category": "public-event",
+      "date": "2027-06-16",
+      "endDate": "2027-06-19",
+      "title": {
+        "zh": "第30届意识科学研究协会年会（ASSC30）",
+        "en": "30th Annual Meeting of the Association for the Scientific Study of Consciousness (ASSC30)"
+      },
+      "description": {
+        "zh": "2027年6月16日至19日，线下举行。",
+        "en": "In person, 16–19 June 2027."
+      },
+      "location": {
+        "zh": "北京 · 北京国际会议中心",
+        "en": "Beijing International Convention Center, Beijing, China"
+      },
+      "sources": [
+        {
+          "label": "会议官网 / Official website",
+          "url": "https://theassc.org/assc-30/"
+        }
+      ]
     }
   ],
   "eventsTimeZone": "Asia/Shanghai",
